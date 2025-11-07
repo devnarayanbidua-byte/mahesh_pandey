@@ -12,7 +12,6 @@ html {
 body {
     font-family: 'Noto Sans Devanagari', sans-serif;
     line-height: 1.6;
-    color: #333;
     background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
 }
 
@@ -129,6 +128,38 @@ body {
     box-shadow: 0 6px 20px rgba(19, 136, 8, 0.4);
 }
 
+/* Language Toggle Button */
+.nav-language {
+    margin-left: 15px;
+}
+
+.language-btn {
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    color: var(--green-dark);
+    padding: 8px 16px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.language-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+    background: linear-gradient(135deg, var(--gold-light), var(--gold));
+}
+
+.language-btn span {
+    font-size: 1rem;
+}
+
 /* Hero Section */
 .hero {
     height: 100vh;
@@ -242,7 +273,7 @@ body {
     max-width: 350px;
     max-height: 450px;
     object-fit: cover;
-    object-position: center;
+    object-position: center top;
     transition: transform 0.3s ease;
     display: block;
 }
@@ -713,6 +744,15 @@ body {
 @media (max-width: 768px) {
     .nav-menu {
         display: none;
+    }
+
+    .nav-language {
+        margin-left: 10px;
+    }
+
+    .language-btn {
+        padding: 6px 12px;
+        font-size: 0.8rem;
     }
 
     .hero-content {
