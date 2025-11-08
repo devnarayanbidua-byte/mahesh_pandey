@@ -201,6 +201,22 @@ function initializeAdditionalFeatures() {
     optimizePerformance();
 }
 
+// Service Details Toggle Functionality
+function toggleServiceDetails(button) {
+    const serviceCard = button.closest('.service-card');
+    const serviceDetails = serviceCard.querySelector('.service-details');
+
+    if (serviceDetails) {
+        if (serviceDetails.classList.contains('show')) {
+            serviceDetails.classList.remove('show');
+            button.textContent = 'और पढ़ें';
+        } else {
+            serviceDetails.classList.add('show');
+            button.textContent = 'कम पढ़ें';
+        }
+    }
+}
+
 // Call additional features after main initialization
 document.addEventListener('DOMContentLoaded', function() {
     // Wait a bit for main initialization
