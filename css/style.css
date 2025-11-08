@@ -863,6 +863,15 @@ body {
     color: #95a5a6;
 }
 
+.designer-credit {
+    color: var(--gold);
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-top: 10px;
+    text-align: center;
+    font-style: italic;
+}
+
 /* Animations */
 @keyframes fadeIn {
     from { opacity: 0; }
