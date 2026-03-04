@@ -9,6 +9,13 @@ html {
     scroll-behavior: smooth;
 }
 
+/* make images responsive by default */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
 body {
     font-family: 'Noto Sans Devanagari', sans-serif;
     line-height: 1.6; 
@@ -259,6 +266,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative; /* container for experience badge */
 }
 
 .image-frame {
@@ -284,7 +292,7 @@ body {
     transform: scale(1.05);
 }
 
-.experience-badge {
+.hero-image .experience-badge {
     position: absolute;
     bottom: -20px;
     right: -20px;
@@ -933,7 +941,7 @@ body {
         aspect-ratio: 3/4;
     }
 
-    .experience-badge {
+    .hero-image .experience-badge {
         position: absolute;
         bottom: -15px;
         right: -15px;
@@ -1061,7 +1069,7 @@ body {
         border-radius: 12px;
     }
 
-    .experience-badge {
+    .hero-image .experience-badge {
         position: absolute;
         bottom: -12px;
         right: -12px;

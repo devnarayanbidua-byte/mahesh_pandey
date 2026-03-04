@@ -248,7 +248,7 @@ window.addEventListener('scroll', throttledScrollHandler);
 // Preload critical images
 function preloadImages() {
     const criticalImages = [
-        'images/gallery/pandit ji.jpeg',
+        'images/gallery/pandit-ji.jpeg',
         'images/gallery/aacharya certificate.jpeg'
     ];
 
