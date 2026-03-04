@@ -1,10 +1,12 @@
-# robots.txt - SEO Optimization for Acharya Mahesh Pandit Ji Website
+# robots.txt - SEO Optimization for Mahesh Pandey (Acharya Mahesh Pandit) Website
 
 User-agent: *
 Allow: /
 Allow: /css/
 Allow: /js/
 Allow: /images/
+Allow: /?profile=mahesh-pandey
+Allow: /?profile=acharya-mahesh-pandit
 
 Disallow: /admin/
 Disallow: /private/
