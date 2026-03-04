@@ -1,0 +1,39 @@
+# robots.txt - SEO Optimization for Acharya Mahesh Pandit Ji Website
+
+User-agent: *
+Allow: /
+Allow: /css/
+Allow: /js/
+Allow: /images/
+
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*.pdf$
+
+# Specific rules for major search engines
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://github.com/devnarayanbidua-byte/mahesh_pandey/sitemap.xml
+Sitemap: https://github.com/devnarayanbidua-byte/mahesh_pandey/sitemap-news.xml
+
+# Prevent indexing of duplicate content
+User-agent: *
+Disallow: /*?*sort=
+Disallow: /*?*filter=
+
+# Allow crawling of CSS and JS for rendering
+User-agent: Googlebot
+Allow: *.css$
+Allow: *.js$
+Allow: *.gif$
+Allow: *.jpg$
+Allow: *.jpeg$
+Allow: *.png$
+Allow: *.webp$
