@@ -292,29 +292,7 @@ body {
     transform: scale(1.05);
 }
 
-.hero-image .experience-badge {
-    position: absolute;
-    bottom: -20px;
-    right: -20px;
-    background: linear-gradient(135deg, var(--gold), var(--gold-light));
-    color: var(--green-dark);
-    padding: 15px;
-    border-radius: 50%;
-    text-align: center;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-    border: 4px solid var(--white);
-}
 
-.exp-number {
-    display: block;
-    font-size: 1.8rem;
-    font-weight: bold;
-}
-
-.exp-text {
-    font-size: 0.8rem;
-    font-weight: 600;
-}
 
 .hero-bg-pattern {
     position: absolute;
@@ -886,6 +864,11 @@ body {
     to { opacity: 1; }
 }
 
+/* Hide navbar when scrolling down */
+.navbar.nav-hidden {
+    transform: translateY(-100%);
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .nav-menu {
@@ -941,19 +924,6 @@ body {
         aspect-ratio: 3/4;
     }
 
-    .hero-image .experience-badge {
-        position: absolute;
-        bottom: -15px;
-        right: -15px;
-        background: linear-gradient(135deg, var(--gold), var(--gold-light));
-        color: var(--green-dark);
-        padding: 12px;
-        border-radius: 50%;
-        text-align: center;
-        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-        border: 3px solid var(--white);
-        font-size: 0.8rem;
-    }
 
     .about-content {
         grid-template-columns: 1fr;
@@ -1069,38 +1039,7 @@ body {
         border-radius: 12px;
     }
 
-    .hero-image .experience-badge {
-        position: absolute;
-        bottom: -12px;
-        right: -12px;
-        background: linear-gradient(135deg, var(--gold), var(--gold-light));
-        color: var(--green-dark);
-        padding: 10px;
-        border-radius: 50%;
-        text-align: center;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-        border: 2px solid var(--white);
-        font-size: 0.7rem;
-        width: 45px;
-        height: 45px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
 
-    .exp-number {
-        display: block;
-        font-size: 1.4rem;
-        font-weight: bold;
-        line-height: 1;
-    }
-
-    .exp-text {
-        font-size: 0.6rem;
-        font-weight: 600;
-        line-height: 1;
-        margin-top: 1px;
-    }
 
     .cta-btn.primary {
         padding: 12px 25px;

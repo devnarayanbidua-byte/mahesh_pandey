@@ -111,10 +111,10 @@ function initializeScrollEffects() {
         // Hide/show navbar on scroll (optional)
         if (scrollTop > lastScrollTop && scrollTop > 200) {
             // Scrolling down - hide navbar
-            navbar.style.transform = 'translateY(-100%)';
+            navbar.classList.add('nav-hidden');
         } else {
             // Scrolling up - show navbar
-            navbar.style.transform = 'translateY(0)';
+            navbar.classList.remove('nav-hidden');
         }
 
         lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
