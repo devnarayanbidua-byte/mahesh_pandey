@@ -522,7 +522,6 @@ let currentLanguage = 'hi';
 // Language Toggle Functionality
 function initializeLanguageToggle() {
     const languageToggle = document.getElementById('language-toggle');
-
     if (languageToggle) {
         languageToggle.addEventListener('click', toggleLanguage);
         updateLanguageButton();
@@ -539,197 +538,62 @@ function toggleLanguage() {
 function updateLanguage() {
     // Update HTML lang attribute
     document.documentElement.lang = currentLanguage;
+    document.documentElement.dir = 'ltr';
 
-    // Update navigation
-    updateNavigation();
-
-    // Update hero section
-    updateHeroSection();
-
-    // Update about section
-    updateAboutSection();
-
-    // Update services section
-    updateServicesSection();
-
-    // Update gallery section
-    updateGallerySection();
-
-    // Update contact section
-    updateContactSection();
-
-    // Update footer
-    updateFooter();
+    // Universal translator for all elements with data-hi and data-en attributes
+    translateAllElements();
 }
 
-function updateNavigation() {
-    const navLinks = document.querySelectorAll('.nav-menu a');
-    navLinks.forEach(link => {
-        const href = link.getAttribute('href');
-        const key = href.substring(1); // Remove the #
-        if (translations[currentLanguage][key]) {
-            link.textContent = translations[currentLanguage][key];
+function translateAllElements() {
+    // Get the language key to use (hi or en)
+    const langKey = 'data-' + currentLanguage;
+    
+    // Find all elements with language data attributes
+    const allElements = document.querySelectorAll('[data-hi], [data-en]');
+    
+    allElements.forEach(el => {
+        const translation = el.getAttribute(langKey);
+        if (translation) {
+            el.textContent = translation;
         }
     });
-}
-
-function updateHeroSection() {
-    // Update hero title spans
-    const vedicText = document.querySelector('.vedic-text');
-    const modernText = document.querySelector('.modern-text');
-    if (vedicText) vedicText.textContent = translations[currentLanguage].vedic;
-    if (modernText) modernText.textContent = translations[currentLanguage].modern;
-
-    // Update hero subtitle
-    const heroSubtitle = document.querySelector('.hero-subtitle');
-    if (heroSubtitle) heroSubtitle.textContent = translations[currentLanguage].heroSubtitle;
-
-    // Update hero badges
-    const badges = document.querySelectorAll('.hero-badges .badge');
-    if (badges.length >= 3) {
-        badges[0].textContent = translations[currentLanguage].shastriAcharya;
-        badges[1].textContent = translations[currentLanguage].karmaKandaCertificate;
-        badges[2].textContent = translations[currentLanguage].vastuExpert;
+    
+    // Special handling for hero title spans
+    const vedicSpan = document.querySelector('.vedic-text');
+    const modernSpan = document.querySelector('.modern-text');
+    
+    if (vedicSpan && vedicSpan.hasAttribute(langKey)) {
+        vedicSpan.textContent = vedicSpan.getAttribute(langKey);
     }
-
-    // Update contact button
-    const contactBtn = document.querySelector('.hero .cta-btn.primary');
-    if (contactBtn) contactBtn.textContent = translations[currentLanguage].contactUs;
-}
-
-function updateAboutSection() {
-    // Update section title
-    const aboutTitle = document.querySelector('#about .section-title');
-    if (aboutTitle) aboutTitle.textContent = translations[currentLanguage].introduction;
-
-    // Update about content
-    const aboutName = document.querySelector('.about-text h3');
-    if (aboutName) aboutName.textContent = translations[currentLanguage].acharyaMaheshPanditJi;
-
-    // Update about details
-    const detailItems = document.querySelectorAll('.about-details .detail-content');
-    if (detailItems.length >= 7) {
-        detailItems[0].querySelector('strong').textContent = translations[currentLanguage].birthplace;
-        detailItems[0].querySelector('div').lastChild.textContent = translations[currentLanguage].ayodhya;
-        detailItems[1].querySelector('strong').textContent = translations[currentLanguage].education;
-        detailItems[1].querySelector('div').lastChild.textContent = translations[currentLanguage].vrindavanGurukul;
-        detailItems[2].querySelector('strong').textContent = translations[currentLanguage].higherEducation;
-        detailItems[2].querySelector('div').lastChild.textContent = translations[currentLanguage].sampurnanandUniversity;
-        detailItems[3].querySelector('strong').textContent = translations[currentLanguage].certificate;
-        detailItems[3].querySelector('div').lastChild.textContent = translations[currentLanguage].karmaKandaDiploma;
-        detailItems[4].querySelector('strong').textContent = translations[currentLanguage].expertise;
-        detailItems[4].querySelector('div').lastChild.textContent = translations[currentLanguage].karmaKandaKathaVachan;
-        detailItems[5].querySelector('strong').textContent = translations[currentLanguage].experience;
-        detailItems[5].querySelector('div').lastChild.textContent = translations[currentLanguage].seventeenYears;
+    if (modernSpan && modernSpan.hasAttribute(langKey)) {
+        modernSpan.textContent = modernSpan.getAttribute(langKey);
     }
-}
-
-function updateServicesSection() {
-    // Update section title and subtitle
-    const servicesTitle = document.querySelector('#services .section-title');
-    const servicesSubtitle = document.querySelector('#services .section-subtitle');
-    if (servicesTitle) servicesTitle.textContent = translations[currentLanguage].ourServices;
-    if (servicesSubtitle) servicesSubtitle.textContent = translations[currentLanguage].allReligiousWorks;
-
-    // Update service cards
-    const serviceCards = document.querySelectorAll('.service-card');
-    serviceCards.forEach(card => {
-        const title = card.querySelector('h3');
-        const description = card.querySelector('p');
-
-        if (title && description) {
-            const titleText = title.textContent.trim();
-            const descText = description.textContent.trim();
-
-            // Map Hindi titles to English keys
-            const titleMappings = {
-                'गणेश पूजन': 'ganeshPoojan',
-                'लक्ष्मी पूजन': 'lakshmiPoojan',
-                'सत्यनारायण पूजन': 'satyanarayanPoojan',
-                'वास्तु पूजन': 'vastuPoojan',
-                'गृह प्रवेश': 'grihPravesh',
-                'कार्यालय उद्घाटन': 'officeOpening',
-                'विवाह संस्कार': 'vivahSanskar',
-                'नामकरण संस्कार': 'namakaranSanskar',
-                'अन्नप्राशन संस्कार': 'annaprasanSanskar',
-                'सुंदरकांड पाठ': 'sundarkandPath',
-                'श्रीरामचरित मानस': 'shreeramcharitManas',
-                'चंडी पाठ': 'chandiPath',
-                'रुद्राभिषेक': 'rudraabhishek',
-                'भूमि पूजन': 'bhumiPoojan',
-                'नवग्रह शांति': 'navgrahShanti',
-                'कुंडली मिलान': 'kundliMilan',
-                'पंचांग परामर्श': 'panchangParamarsh',
-                'श्रीमद् भागवत महापुराण कथा': 'bhagwatMahapuran'
-            };
-
-            const descMappings = {
-                'सिद्धि और समृद्धि के लिए गणेश जी की आराधना': 'ganeshDescription',
-                'धन और समृद्धि की देवी की पूजा': 'lakshmiDescription',
-                'सुख-समृद्धि के लिए भगवान विष्णु की कथा': 'satyanarayanDescription',
-                'घर और कार्यालय की शुभ शुरुआत': 'vastuDescription',
-                'नए घर में प्रवेश की शुभ पूजा': 'grihPraveshDescription',
-                'व्यापार की शुभ शुरुआत': 'officeOpeningDescription',
-                'पवित्र वैवाहिक समारोह': 'vivahDescription',
-                'बच्चे का नामकरण संस्कार': 'namakaranDescription',
-                'बच्चे का पहला अन्नप्राशन': 'annaprasanDescription',
-                'हनुमान जी की महिमा का पाठ': 'sundarkandDescription',
-                'तुलसीदास जी की अमर रचना': 'shreeramcharitDescription',
-                'देवी महात्म्य का पाठ': 'chandiDescription',
-                'शिव जी का विशेष अभिषेक': 'rudraabhishekDescription',
-                'निर्माण कार्य की शुभ शुरुआत': 'bhumiDescription',
-                'ग्रह दोषों से मुक्ति': 'navgrahDescription',
-                'विवाह के लिए कुंडली मिलान': 'kundliDescription',
-                'शुभ मुहूर्त और दिनांक': 'panchangDescription',
-                'कृष्ण भक्ति की दिव्य कथा': 'bhagwatDescription'
-            };
-
-            if (titleMappings[titleText]) {
-                title.textContent = translations[currentLanguage][titleMappings[titleText]];
-            }
-            if (descMappings[descText]) {
-                description.textContent = translations[currentLanguage][descMappings[descText]];
+    
+    // Translate all "और पढ़ें" / "Read More" buttons
+    const readMoreButtons = document.querySelectorAll('.read-more-btn');
+    readMoreButtons.forEach(btn => {
+        btn.textContent = currentLanguage === 'hi' ? 'और पढ़ें' : 'Read More';
+    });
+    
+    // Translate all service contact buttons
+    const serviceContactButtons = document.querySelectorAll('.service-contact-btn');
+    serviceContactButtons.forEach(btn => {
+        btn.textContent = currentLanguage === 'hi' ? 'संपर्क करें' : 'Contact Us';
+    });
+    
+    // Translate CTA buttons with icons
+    const ctaButtons = document.querySelectorAll('.cta-btn');
+    ctaButtons.forEach(btn => {
+        if (btn.hasAttribute('data-hi')) {
+            const text = btn.getAttribute(langKey);
+            const iconMatch = btn.innerHTML.match(/<span>.*?<\/span>/);
+            if (iconMatch) {
+                btn.innerHTML = iconMatch[0] + ' ' + text;
+            } else {
+                btn.textContent = text;
             }
         }
     });
-}
-
-function updateGallerySection() {
-    const galleryTitle = document.querySelector('#gallery .section-title');
-    const gallerySubtitle = document.querySelector('#gallery .section-subtitle');
-    if (galleryTitle) galleryTitle.textContent = translations[currentLanguage].photoGallery;
-    if (gallerySubtitle) gallerySubtitle.textContent = translations[currentLanguage].religiousWorks;
-}
-
-function updateContactSection() {
-    const contactTitle = document.querySelector('#contact .section-title');
-    const contactSubtitle = document.querySelector('#contact .section-subtitle');
-    if (contactTitle) contactTitle.textContent = translations[currentLanguage].contactUsTitle;
-    if (contactSubtitle) contactSubtitle.textContent = translations[currentLanguage].connectWithUs;
-
-    // Update contact items
-    const contactItems = document.querySelectorAll('.contact-item h3');
-    contactItems.forEach(item => {
-        const text = item.textContent.trim();
-        if (text === 'WhatsApp') item.textContent = translations[currentLanguage].whatsapp;
-        if (text === 'विशेषज्ञता') item.textContent = translations[currentLanguage].specialization;
-        if (text === 'पता') item.textContent = translations[currentLanguage].address;
-    });
-
-    // Update CTA section
-    const ctaTitle = document.querySelector('.contact-cta h3');
-    const ctaDesc = document.querySelector('.contact-cta p');
-    const ctaBtn = document.querySelector('.contact-cta .cta-btn');
-    if (ctaTitle) ctaTitle.textContent = translations[currentLanguage].contactNow;
-    if (ctaDesc) ctaDesc.textContent = translations[currentLanguage].smoothCompletion;
-    if (ctaBtn) ctaBtn.innerHTML = `<span>📱</span> ${translations[currentLanguage].sendMessage}`;
-}
-
-function updateFooter() {
-    const footerCopyright = document.querySelector('.footer-bottom p:first-child');
-    const footerRespect = document.querySelector('.footer-bottom p:last-child');
-    if (footerCopyright) footerCopyright.textContent = translations[currentLanguage].copyright;
-    if (footerRespect) footerRespect.textContent = translations[currentLanguage].vedicRespect;
 }
 
 function updateLanguageButton() {
@@ -737,7 +601,7 @@ function updateLanguageButton() {
     if (languageToggle) {
         const flag = currentLanguage === 'hi' ? '🇮🇳' : '🇺🇸';
         const text = currentLanguage === 'hi' ? 'EN' : 'HI';
-        languageToggle.innerHTML = `<span>${flag}</span> ${text}`;
+        languageToggle.innerHTML = '<span>' + flag + '</span> ' + text;
     }
 }
 
@@ -753,10 +617,10 @@ function initializeLanguageSystem() {
     updateLanguage();
 }
 
-// Call language initialization
+// Call language initialization at page load
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize language system after other initializations
-    setTimeout(initializeLanguageSystem, 200);
+    // Initialize language system after all DOM is ready
+    setTimeout(initializeLanguageSystem, 100);
 });
 
 // Console welcome message
