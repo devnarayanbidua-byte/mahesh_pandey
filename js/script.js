@@ -627,7 +627,7 @@ document.addEventListener('DOMContentLoaded', function() {
 console.log(`
 🕉️ आचार्य महेश पंडित जी का Portfolio Website
 ✨ Modern Vedic Design with Ancient Wisdom
-📱 WhatsApp: +91 74649 23758
+📱 WhatsApp: +91 7676457013 | +91 7464923758
 🌐 Built with HTML, CSS, JavaScript
 🌍 Multi-language Support: Hindi & English
 `);
