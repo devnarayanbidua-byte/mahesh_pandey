@@ -209,10 +209,10 @@ function toggleServiceDetails(button) {
     if (serviceDetails) {
         if (serviceDetails.classList.contains('show')) {
             serviceDetails.classList.remove('show');
-            button.textContent = 'और पढ़ें';
+            button.textContent = currentLanguage === 'hi' ? 'और पढ़ें' : 'Read More';
         } else {
             serviceDetails.classList.add('show');
-            button.textContent = 'कम पढ़ें';
+            button.textContent = currentLanguage === 'hi' ? 'कम पढ़ें' : 'Read Less';
         }
     }
 }
@@ -517,7 +517,7 @@ const translations = {
     }
 };
 
-let currentLanguage = 'hi';
+let currentLanguage = 'en';
 
 // Language Toggle Functionality
 function initializeLanguageToggle() {
@@ -554,7 +554,19 @@ function translateAllElements() {
     allElements.forEach(el => {
         const translation = el.getAttribute(langKey);
         if (translation) {
-            el.textContent = translation;
+            // For elements with only text content (no child elements), use textContent
+            // For elements with HTML content, we need to be more careful
+            if (el.children.length === 0) {
+                // Simple text element
+                el.textContent = translation;
+            } else {
+                // Element has children - check if it's a leaf element or has mixed content
+                const hasOnlyTextNodes = Array.from(el.childNodes).every(node => node.nodeType === Node.TEXT_NODE || node.nodeType === Node.COMMENT_NODE);
+                if (hasOnlyTextNodes) {
+                    el.textContent = translation;
+                }
+                // Otherwise, don't replace to preserve child elements
+            }
         }
     });
     
@@ -594,6 +606,17 @@ function translateAllElements() {
             }
         }
     });
+    
+    // Update title and logo elements specifically
+    const navLogoTitle = document.querySelector('.nav-logo .nav-title');
+    if (navLogoTitle && navLogoTitle.hasAttribute(langKey)) {
+        navLogoTitle.textContent = navLogoTitle.getAttribute(langKey);
+    }
+    
+    const footerLogoTitle = document.querySelector('.footer-logo .footer-title');
+    if (footerLogoTitle && footerLogoTitle.hasAttribute(langKey)) {
+        footerLogoTitle.textContent = footerLogoTitle.getAttribute(langKey);
+    }
 }
 
 function updateLanguageButton() {
@@ -611,6 +634,10 @@ function initializeLanguageSystem() {
     const savedLanguage = localStorage.getItem('preferredLanguage');
     if (savedLanguage && (savedLanguage === 'hi' || savedLanguage === 'en')) {
         currentLanguage = savedLanguage;
+    } else {
+        // Default to English
+        currentLanguage = 'en';
+        localStorage.setItem('preferredLanguage', 'en');
     }
 
     initializeLanguageToggle();
@@ -619,8 +646,8 @@ function initializeLanguageSystem() {
 
 // Call language initialization at page load
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize language system after all DOM is ready
-    setTimeout(initializeLanguageSystem, 100);
+    // Initialize language system immediately when DOM is content loaded
+    initializeLanguageSystem();
 });
 
 // Console welcome message
