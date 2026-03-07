@@ -527,6 +527,41 @@ const contentTranslations = {
     'संपर्क करें': 'Contact Us',
     'लाभ:': 'Benefits:',
     
+    // Common links and buttons
+    'मुख्य': 'Home',
+    'परिचय': 'About',
+    'सेवाएं': 'Services',
+    'गैलरी': 'Gallery',
+    'संपर्क': 'Contact',
+    
+    // Hero section
+    'वैदिक': 'Vedic',
+    'आधुनिक': 'Modern',
+    'आचार्य महेश पंडित जी': 'Acharya Mahesh Pandit Ji',
+    'सर्वश्रेष्ठ हिंदी पंडित • 17+ साल का अनुभव • वैदिक पूजा सेवाएं': 'Best Hindi Pandit • 17+ Years Experience • Vedic Pooja Services',
+    'शास्त्री आचार्य': 'Shastri Acharya',
+    'वैदिक पंडित': 'Vedic Pandit',
+    'हिंदू पुजारी': 'Hindu Priest',
+    
+    // About section
+    'आचार्य महेश पंडित जी': 'Acharya Mahesh Pandit Ji',
+    'जन्म स्थान:': 'Birthplace:',
+    'अयोध्या': 'Ayodhya',
+    'शिक्षा:': 'Education:',
+    'वृंदावन शिक्षा तुलसी गुरुकुल विद्यापीठ': 'Vrindavan Shiksha Tulsi Gurukul Vidhyapeeth',
+    'उच्च शिक्षा:': 'Higher Education:',
+    'शास्त्री आचार्य, सम्पूर्णानंद विश्वविद्यालय, वाराणसी': 'Shastri Acharya, Sampurnanand University, Varanasi',
+    'प्रमाणपत्र:': 'Certificate:',
+    'कर्मकांड डिप्लोमा, एमएमवायवीवी, करोंदी कटनी एम.पी.': 'Karma Kanda Diploma, MMVV, Karondi Katni M.P.',
+    'विशेषज्ञता:': 'Expertise:',
+    'कर्मकांड एवं कथा वाचन': 'Karma Kanda & Katha Vachan',
+    'अनुभव:': 'Experience:',
+    '17+ वर्ष': '17+ Years',
+    
+    // Services section header
+    'हमारी सेवाएं': 'Our Services',
+    'सभी वैदिक पूजा सेवाएं - गणेश पूजन, विवाह संस्कार, गृह प्रवेश, वास्तु शांति, कथा वाचन': 'All Vedic Pooja Services - Ganesh Poojan, Marriage Ceremony, Grih Pravesh, Vastu Shanti, Katha Vachan',
+    
     // Ganesh Poojan
     'गणेश जी का महत्व:': 'Lord Ganesha\' Importance:',
     'विस्तृत पूजा विधि:': 'Detailed Pooja Procedure:',
@@ -632,6 +667,155 @@ const contentTranslations = {
     'वास्तु दोषों का निवारण': 'Removal of Vastu defects',
     'परिवार की समृद्धि': 'Family prosperity',
     'कार्यालय में सफलता': 'Success in office',
+    
+    // Office Opening
+    'कार्यालय उद्घाटन का महत्व:': 'Office Opening Importance:',
+    'व्यापार की सफलता के लिए अनिवार्य। कार्यालय को शुभ बनाता है और सकारात्मक ऊर्जा लाता है।': 'Essential for business success. Makes office auspicious and brings positive energy.',
+    'पूजा विधि:': 'Puja Procedure:',
+    'गणेश पूजा, वास्तु पूजा, हवन, मंगल कलश स्थापना।': 'Ganesha puja, Vastu puja, havan, auspicious pot installation.',
+    'IT कंपनियों, स्टार्टअप्स, और कॉर्पोरेट ऑफिस के लिए विशेष पूजा संपन्न किए।': 'Conducted special pujas for IT companies, startups, and corporate offices.',
+    'नए ऑफिस में सकारात्मक माहौल और व्यापारिक सफलता सुनिश्चित करता है।': 'Ensures positive atmosphere in new office and business success.',
+    'व्यापार में सफलता': 'Success in business',
+    'कर्मचारियों की समृद्धि': 'Employee prosperity',
+    'कार्यालय में सकारात्मक वातावरण': 'Positive atmosphere in office',
+    'लाभ और प्रतिष्ठा': 'Profit and reputation',
+    
+    // Marriage Ceremony
+    'विवाह संस्कार का महत्व:': 'Marriage Ceremony Importance:',
+    'जीवन का सबसे पवित्र संस्कार। वैदिक रीति की परंपरा में किया जाता है, दो आत्माओं को एक करता है।': 'Most sacred sacrament of life. Performed in Vedic tradition, unites two souls.',
+    'विस्तृत विवाह विधि (1.5-2 घंटे):': 'Detailed Marriage Procedure (1.5-2 hours):',
+    'पूर्व तैयारी:': 'Pre-ceremony Preparation:',
+    'दूल्हा-दुल्हन का पूजन, माता-पिता का आशीर्वाद': 'Worship of bride and groom, parents blessing',
+    'विवाह अग्नि स्थापना:': 'Marriage Fire Establishment:',
+    'विवाह कुंड में अग्नि जलाना, साक्षी के रूप में अग्नि देव': 'Lighting fire in marriage pit, fire god as witness',
+    'कन्यादान:': 'Bride Gift Ceremony:',
+    'दुल्हन को दूल्हे को देना (पिता की ओर से/मां की ओर से)': 'Presenting bride to groom (from father/mother)',
+    'हस्तग्रहण:': 'Hand Holding:',
+    'दूल्हे द्वारा दुल्हन का हाथ पकड़ना, संकल्प': 'Groom holding bride\'s hand, taking oath',
+    'सप्तपदी:': 'Seven Steps:',
+    'सात कदम दूल्हे के साथ चलना - अन्न, शक्ति, पयस, स्वास्थ्य, पशु, ऋतु, स्वास्थ्य के लिए': 'Seven steps with groom - for food, strength, health, cattle, seasons, wellness',
+    'मंगलसूत्र बंधन:': 'Sacred Thread Binding:',
+    'दूल्हे द्वारा दुल्हन को मंगलसूत्र पहनाना': 'Groom puts sacred thread on bride',
+    'सिंदूर दान:': 'Vermillion Application:',
+    'सिंदूर लगाना (विवाहित स्त्री का प्रतीक)': 'Applying vermillion (symbol of married woman)',
+    'होम:': 'Fire Ritual:',
+    'नई दाम्पत्य जीवन की खुशहाली के लिए हवन': 'Fire ritual for happiness of new married life',
+    'सभी रिश्तेदारों का आशीर्वाद वचन': 'Blessing words from all relatives',
+    'विवाह स्थल:': 'Wedding Venue:',
+    'मंदिर, होटल, विवाह हॉल, बगीचे, घर - सभी स्थानों पर संपन्न किए जा सकते हैं।': 'Temple, hotel, wedding hall, garden, home - can be conducted at all venues.',
+    'वर-वधु का जन्म नक्षत्र अच्छा होना चाहिए (ज्योतिष परामर्श से), विवाह तिथि शुभ मुहूर्त में करें, सभी संस्कार पूरी परंपरा के अनुसार करें।': 'Bride and groom birth star should be favorable (astrological consultation), marriage date in auspicious time, all rituals as per tradition.',
+    'जीवनसाथी का मिलना': 'Finding life partner',
+    'परिवार की स्थिरता': 'Family stability',
+    'संतान सुख': 'Children\'s happiness',
+    'आध्यात्मिक उन्नति': 'Spiritual progress',
+    
+    // Baby Naming
+    'नामकरण संस्कार का महत्व:': 'Baby Naming Ceremony Importance:',
+    'बच्चे के जीवन की दिशा तय करने वाला संस्कार। शास्त्रों में नाम का बहुत महत्व बताया गया है - नाम में ही बालक के भविष्य की परछाई होती है।': 'Ceremony determining child\'s life direction. Name has great importance in scriptures - child\'s future is reflected in the name.',
+    'विस्तृत नामकरण विधि (1.5-2 घंटे):': 'Detailed Naming Ceremony Procedure (1.5-2 hours):',
+    'ज्योतिष विश्लेषण:': 'Astrological Analysis:',
+    'बच्चे का जन्म नक्षत्र, राशि, वर्ण के अनुसार नाम': 'Name according to child\'s birth star, zodiac, and letter',
+    'ब्रह्मा पूजन:': 'Brahma Worship:',
+    'ज्ञान और बुद्धि के देवता को नमस्कार': 'Salutation to God of knowledge and wisdom',
+    'हवन:': 'Fire Ritual:',
+    'बच्चे के नाम का घोषणा, अग्नि को साक्षी मानकर': 'Announcing child\'s name, taking fire as witness',
+    'मंत्र पाठ:': 'Mantra Recitation:',
+    'बच्चे के दीर्घायु और सुस्वास्थ्य के लिए मंत्र': 'Mantras for child\'s long life and good health',
+    'नाम घोषणा:': 'Name Announcement:',
+    'पंडित द्वारा उचित नाम का निर्धारण और घोषणा': 'Priest determines and announces appropriate name',
+    'नवजात शिशु की आरती, परिवार का आशीर्वाद': 'Aarti for newborn, family blessings',
+    'जन्म नक्षत्र के अक्षर अनुसार, ग्रहों की शुभता देखकर, धार्मिक/शास्त्रीय पुरुष/स्त्री के नाम पर।': 'According to birth star letters, planet auspiciousness, named after religious/scriptural figures.',
+    'बेंगलुरु में घर, अपार्टमेंट, अस्पतालों में सैकड़ों नामकरण समारोह संपन्न किए - सभी धर्मों और परिवारों के साथ।': 'Conducted hundreds of naming ceremonies in homes, apartments, hospitals - with all religions and families.',
+    'जन्म का सही समय जानना आवश्यक है (घंटा-मिनट), माता-पिता की जन्मतारीख और नक्षत्र।': 'Knowing exact birth time (hour-minute) is necessary, parents\' birth date and star.',
+    'बच्चे का दीर्घायु होना': 'Child\'s longevity',
+    'सकारात्मक गुणों का विकास': 'Development of positive qualities',
+    'परिवार की खुशी': 'Family happiness',
+    'आध्यात्मिक संरक्षण': 'Spiritual protection',
+    
+    // Annaprasan
+    'अन्नप्राशन संस्कार का महत्व:': 'First Feeding Ceremony Importance:',
+    'बच्चे को सुबुद्धि, बल और स्वास्थ्य प्रदान करता है।': 'Provides child with wisdom, strength and health.',
+    'देवताओं को प्रणाम, चावल-दही-शहद का पहला भोजन, हवन और आरती, परिवार का आशीर्वाद।': 'Salutation to deities, first feeding with rice-yogurt-honey, fire ritual and aarti, family blessings.',
+    'बेंगलुरु के विभिन्न क्षेत्रों में घर, अपार्टमेंट और कम्युनिटी हॉल में अन्नप्राशन संपन्न किए।': 'Conducted first feeding ceremonies in homes, apartments and community halls across Bangalore.',
+    'संपूर्ण अन्नप्राशन संस्कार 1-1.5 घंटे में पूरा होता है।': 'Complete first feeding ceremony takes 1-1.5 hours.',
+    'बच्चे का स्वस्थ विकास': 'Child\'s healthy development',
+    'ज्ञान और बुद्धि की प्राप्ति': 'Gaining knowledge and wisdom',
+    'दीर्घायु और समृद्धि': 'Longevity and prosperity',
+    
+    // Katha Vachan Services
+    'सुंदरकांड का महत्व:': 'Sundarkand Importance:',
+    'रामायण का सबसे शक्तिशाली कांड। सभी प्रकार की समस्याओं का समाधान करता है।': 'Most powerful section of Ramayana. Solves all kinds of problems.',
+    'हनुमान जी की पूजा, संपूर्ण सुंदरकांड पाठ, आरती और प्रसाद वितरण।': 'Worship of Hanuman, complete Sundarkand recitation, aarti and blessing distribution.',
+    'बेंगलुरु के सभी प्रमुख क्षेत्रों में Whitefield, Koramangala, Electronic City, Indiranagar सहित घर, मंदिर और कम्युनिटी हॉल में सुंदरकांड पाठ संपन्न किए। परिवार को शक्ति, साहस और सभी समस्याओं से मुक्ति का आशीर्वाद मिलता है।': 'Conducted Sundarkand recitation in homes, temples and community halls including Whitefield, Koramangala, Electronic City, Indiranagar. Family receives blessing of strength, courage and freedom from all problems.',
+    'संपूर्ण सुंदरकांड पाठ 3-4 घंटे में पूरा होता है, जिसमें हनुमान जी की सभी महिमा और शक्तिशाली अध्याय शामिल होते हैं।': 'Complete Sundarkand recitation takes 3-4 hours, including all glories of Hanuman and powerful chapters.',
+    'सभी प्रकार की समस्याओं से मुक्ति': 'Freedom from all kinds of problems',
+    'शक्ति और साहस की प्राप्ति': 'Gaining strength and courage',
+    'रोगों से रक्षा': 'Protection from diseases',
+    'मनोकामना की पूर्ति': 'Fulfillment of wishes',
+    
+    // Ramcharit Manas
+    'रामचरित मानस का महत्व:': 'Ramcharit Manas Importance:',
+    'भक्ति का सर्वोच्च ग्रंथ। राम जी के जीवन से सीखने वाला पाठ।': 'Supreme scripture of devotion. Lessons from Lord Ram\'s life.',
+    'राम जी की पूजा, रामचरित मानस का संपूर्ण पाठ, भजन, आरती और प्रसाद।': 'Worship of Lord Ram, complete Ramcharit Manas recitation, hymns, aarti and blessings.',
+    'बेंगलुरु के सभी क्षेत्रों में परिवार, मंदिर, कम्युनिटी हॉल और सामुदायिक सभाओं में रामचरित मानस पाठ संपन्न किए। भक्ति, ज्ञान और आध्यात्मिक आशीर्वाद सभी को मिलता है।': 'Conducted Ramcharit Manas recitation in families, temples, community halls across Bangalore. All receive devotion, knowledge and spiritual blessings.',
+    'संपूर्ण रामचरित मानस को 7 दिन के संक्षिप्त पाठ के रूप में या सांध्य पाठ के 19-21 दिन के पूरे पाठ के रूप में संपन्न किया जा सकता है। प्रत्येक दिन 2-3 घंटे का समय लगता है।': 'Can be completed as 7-day brief recitation or 19-21 day complete evening recitation. Takes 2-3 hours daily.',
+    'भक्ति और ज्ञान की प्राप्ति': 'Gaining devotion and knowledge',
+    'सद्गुणों का विकास': 'Development of virtues',
+    'मोक्ष की प्राप्ति': 'Attainment of salvation',
+    
+    // Chandi Path
+    'चंडी पाठ का महत्व:': 'Chandi Path Importance:',
+    'देवी की शक्ति का सबसे बड़ा स्तोत्र। सभी प्रकार के शत्रुओं से रक्षा करता है।': 'Greatest hymn of Goddess power. Protects from all enemies.',
+    'देवी पूजा, पाठ, हवन, आरती।': 'Goddess worship, recitation, fire ritual, aarti.',
+    'शत्रुओं से रक्षा': 'Protection from enemies',
+    'साहस और शक्ति की प्राप्ति': 'Gaining courage and strength',
+    'रोगों से मुक्ति': 'Freedom from diseases',
+    'सभी प्रकार की सिद्धि': 'All kinds of blessings',
+    
+    // Kundli Milan
+    'कुंडली मिलान का महत्व:': 'Kundli Milan Importance:',
+    'विवाह पूर्व अनिवार्य। दोनों परिवारों की compatability check।': 'Essential before marriage. Compatibility check of both families.',
+    'कुंडली विश्लेषण, मिलान, परामर्श।': 'Horoscope analysis, matching, consultation.',
+    'सुखी वैवाहिक जीवन': 'Happy married life',
+    'संतान सुख': 'Children happiness',
+    'दोनों परिवारों की खुशी': 'Happiness of both families',
+    
+    // Panchang Paramarsh
+    'पंचांग परामर्श का महत्व:': 'Panchang Consultation Importance:',
+    'शुभ कार्यों के लिए सही समय का निर्धारण। जीवन में सफलता का आधार।': 'Determining right time for auspicious works. Foundation of life success.',
+    'पंचांग विश्लेषण, मुहूर्त निर्धारण, परामर्श।': 'Panchang analysis, muhurat determination, consultation.',
+    'विघ्नों का निवारण': 'Removal of obstacles',
+    'सकारात्मक परिणाम': 'Positive results',
+    'जीवन में संतुलन': 'Balance in life',
+    
+    // Bhagwat Katha
+    'भागवत कथा का महत्व:': 'Bhagwat Katha Importance:',
+    'भक्ति का सर्वोच्च ग्रंथ। कृष्ण जी के जीवन से सीखने वाला पाठ।': 'Supreme scripture of devotion. Lessons from Lord Krishna\'s life.',
+    'कृष्ण पूजा, कथा पाठ, भजन, आरती।': 'Krishna worship, story recitation, hymns, aarti.',
+    
+    // Gallery
+    'हमारे कार्य': 'Our Work',
+    'हमारे वैदिक पूजा और कथा वाचन कार्यक्रमों के फोटो': 'Photos of our Vedic pooja and katha vachan programs',
+    'गृह प्रवेश पूजा': 'Grih Pravesh',
+    'रुद्राभिषेक': 'Rudraabhishek',
+    'वास्तु शांति पूजा': 'Vastu Shanti',
+    'देव नमस्कार': 'Dev Namaskar',
+    'अनुष्ठान': 'Anushthan',
+    'शिवार्चन': 'Shivarchan',
+    
+    // Contact section
+    'संपर्क करें': 'Contact Us',
+    'वैदिक पंडित से संपर्क करें - सभी हिंदू धार्मिक सेवाएं': 'Contact our Vedic Pandit - All Hindu religious services',
+    'WhatsApp': 'WhatsApp',
+    'विशेषज्ञता': 'Specialization',
+    'कर्मकांड • कथा वाचन • ज्योतिष • वास्तु': 'Karma Kanda • Katha Vachan • Jyotish • Vastu',
+    'पता': 'Address',
+    'अभी संपर्क करें': 'Contact Now',
+    'आपके धार्मिक कार्यों को सुचारू रूप से संपन्न करवाने के लिए': 'For smooth completion of your religious works',
+    
+    // Footer
+    '© 2025 आचार्य महेश पंडित जी. सर्वाधिकार सुरक्षित।': '© 2025 Acharya Mahesh Pandit Ji. All rights reserved.',
+    'वैदिक परंपरा का सम्मान करते हुए': 'Respecting Vedic traditions',
     
     // Grih Pravesh
     'गृह प्रवेश का महत्व:': 'House Warming\' Importance:',
