@@ -519,6 +519,154 @@ const translations = {
 
 let currentLanguage = 'en';
 
+// Content Translation Mapping for detailed service descriptions
+const contentTranslations = {
+    'वैदिक प्रमाण:': 'Vedic Evidence:',
+    'और पढ़ें': 'Read More',
+    'कम पढ़ें': 'Read Less',
+    'संपर्क करें': 'Contact Us',
+    'लाभ:': 'Benefits:',
+    
+    // Ganesh Poojan
+    'गणेश जी का महत्व:': 'Lord Ganesha\' Importance:',
+    'विस्तृत पूजा विधि:': 'Detailed Pooja Procedure:',
+    'आह्वान और स्नान:': 'Invocation and Bath:',
+    'गणेश जी का स्वागत, प्रणाम': 'Welcome and Salutation to Lord Ganesha',
+    'षोडश उपचार:': '16 Ritual Offerings:',
+    'आसन, पाद्य, अर्घ्य, आचमन, पवित्रीकरण, वस्त्र, यज्ञोपवीत, गंध, पुष्प, धूप, दीप, नैवेद्य': 'Seat, foot washing, offerings, purification, clothes, sacred thread, fragrance, flowers, incense, lamps, food offerings',
+    'मोदक और लड्डू:': 'Modak and Sweets:',
+    'गणेश जी का प्रिय भोग, परिवार के साथ वितरण': 'Lord Ganesha\' favorite offering, distributed among family',
+    'आरती और मंत्र:': 'Aarti and Mantras:',
+    'पूर्ण आरती, शांति मंत्र का पाठ': 'Complete aarti, chanting of peace mantras',
+    'प्रसाद वितरण:': 'Blessing Distribution:',
+    'परिवार के सभी सदस्यों को प्रसाद': 'Blessing distributed to all family members',
+    'आवश्यक सामग्री:': 'Required Materials:',
+    'फूल (गुलाब, गेंदा), दही, शहद, मोदक, नारियल, तिल, दूध, घी, धूप, दीप, गेहूं।': 'Flowers (roses, marigolds), yogurt, honey, modak, coconut, sesame, milk, ghee, incense, lamps, wheat.',
+    'अनुभव:': 'Experience:',
+    '17+ साल में Whitefield, Koramangala, Electronic City समेत सभी क्षेत्रों में गणेश पूजन व्यक्तिगत घरों, व्यापार स्थलों व कार्यालयों में संपन्न किए।': '17+ years of experience conducting Ganesh Poojan in personal homes, businesses and offices across Whitefield, Koramangala, Electronic City and all areas.',
+    'समय अवधि:': 'Duration:',
+    'पूरी पूजा 1-2 घंटे में संपन्न होती है। व्यवस्था सहित 2-3 घंटे का है।': 'Complete poojan takes 1-2 hours. With arrangements, it takes 2-3 hours.',
+    'उपयुक्त अवसर:': 'Suitable Occasions:',
+    'किसी भी नए कार्य की शुरुआत, व्यापार खोलना, होम टेक ओवर, शिक्षा शुरू करना।': 'Beginning any new work, opening a business, home takeover, starting education.',
+    'कार्यों में सफलता': 'Success in tasks',
+    'बुद्धि और ज्ञान की प्राप्ति': 'Gaining wisdom and knowledge',
+    'विघ्नों का निवारण': 'Removal of obstacles',
+    'समृद्धि और धनलाभ': 'Prosperity and financial gain',
+    
+    // Lakshmi Poojan
+    'लक्ष्मी जी का महत्व:': 'Goddess Lakshmi\' Importance:',
+    'धन, समृद्धि और वैभव की देवी। वैदिक ग्रंथों में उनका उल्लेख सर्वश्रेष्ठ देवी के रूप में है।': 'Goddess of wealth, prosperity and splendor. Mentioned as the supreme goddess in Vedic scriptures.',
+    'भूमि पूजन:': 'Earth Worship:',
+    'घर/कार्यालय की चारों दिशा की शुद्धि, भूमि देवी को नमस्कार': 'Purification of all four directions of home/office, salutation to Earth Goddess',
+    'लक्ष्मी आह्वान:': 'Lakshmi Invocation:',
+    'श्रीसूक्त मंत्र पाठ, देवी को आमंत्रण': 'Recitation of Sri Sukta mantras, invitation to the Goddess',
+    'षोडश उपचार:': 'Sixteen Offerings:',
+    '16 पारंपरिक पूजन विधि पूर्ण करना': 'Completion of 16 traditional puja methods',
+    'हवन:': 'Fire Ritual:',
+    'घी, अनाज, फल से हवन, समृद्धि की कामना': 'Havan with ghee, grains, fruits, wishing for prosperity',
+    'रंगोली:': 'Rangoli:',
+    'लक्ष्मी चिन्ह बनाना, फूलों से सजावट': 'Creating Lakshmi symbols, decoration with flowers',
+    'दीप प्रज्वलन:': 'Lamp Lighting:',
+    'घर में सौभाग्य का प्रतीक': 'Symbol of good fortune in the home',
+    'विशेष लाभ:': 'Special Benefits:',
+    'व्यक्तिगत घरों में परिवार की खुशहाली, दुकानों में व्यापार वृद्धि, कार्यालयों में कर्मचारी संतुष्टि, संस्थानों में आय में वृद्धि।': 'Family happiness in personal homes, business growth in shops, employee satisfaction in offices, increased income in institutions.',
+    'सर्वश्रेष्ठ समय:': 'Best Time:',
+    'दिवाली के समय सबसे प्रभावी, या किसी भी समय व्यापार वृद्धि के लिए।': 'Most effective during Diwali, or anytime for business growth.',
+    'धन और समृद्धि की प्राप्ति': 'Gain of wealth and prosperity',
+    'सुख-समृद्धि का आशीर्वाद': 'Blessing of happiness and prosperity',
+    'परिवार में सौहार्द': 'Harmony in family',
+    'व्यापार में सफलता': 'Success in business',
+    
+    // Satyanarayan Poojan
+    'सत्यनारायण जी का महत्व:': 'Lord Satyanarayan\' Importance:',
+    'सच्चाई और धर्म के रक्षक। उनकी कथा सुनने से घर में सुख-समृद्धि आती है और मनोकामनाएं पूर्ण होती हैं।': 'Protector of truth and dharma. Listening to his story brings happiness and prosperity to the home and fulfills desires.',
+    'विस्तृत पूजा विधि (3-4 घंटे की अवधि):': 'Detailed Puja Procedure (3-4 hours duration):',
+    'चरण 1 - भूमि शोधन:': 'Step 1 - Earth Purification:',
+    'पूजा स्थान को गंगाजल से शुद्ध करना, फूलों से सजाना': 'Purifying the worship place with Ganges water, decorating with flowers',
+    'चरण 2 - देवताओं का आह्वान:': 'Step 2 - Invocation of Deities:',
+    'गणेश, सरस्वती, महालक्ष्मी, नवग्रह की स्थापना': 'Installation of Ganesha, Saraswati, Mahalakshmi, nine planets',
+    'चरण 3 - विष्णु पूजन:': 'Step 3 - Vishnu Worship:',
+    'भगवान विष्णु को 16 उपचारों से पूजना': 'Worshipping Lord Vishnu with 16 ritual offerings',
+    'चरण 4 - संपूर्ण कथा पाठ:': 'Step 4 - Complete Story Recitation:',
+    '2-3 घंटे की पूरी पारंपरिक कथा वाचन': 'Complete traditional story recitation lasting 2-3 hours',
+    'चरण 5 - प्रसाद बनाना:': 'Step 5 - Making Blessed Food:',
+    'पारंपरिक हलवा-पूरी-चना का भोग तैयार करना': 'Preparing traditional halwa-puri-chickpea offering',
+    'चरण 6 - आरती:': 'Step 6 - Aarti:',
+    'सभी को दीप से आरती, मंत्रों का पाठ': 'Aarti for all with lamps, chanting of mantras',
+    'चरण 7 - प्रसाद वितरण:': 'Step 7 - Blessing Distribution:',
+    'सभी परिवार सदस्यों को प्रसाद वितरण': 'Distributing blessings to all family members',
+    'मैदा, चना, गुड़, घी, दही, शहद, चावल, नारियल, फूल, घंटी, दीप, धूप, फल।': 'Flour, chickpea, jaggery, ghee, yogurt, honey, rice, coconut, flowers, bells, lamps, incense, fruits.',
+    'वास्तविक लाभ:': 'Real Benefits:',
+    'नई नौकरी प्राप्ति, व्यापार समृद्धि, विवाह योग्य बेटी के लिए योग्य दूल्हा, रोग निवारण, परिवार में सुख-शांति।': 'Getting new job, business prosperity, suitable groom for marriageable daughter, curing diseases, peace in family.',
+    'विशेष नियम:': 'Special Rules:',
+    'कथा के दिन व्रत रखना वैकल्पिक, पूरी पारंपरिक विधि के अनुसार प्रसाद वितरण आवश्यक।': 'Fasting on story day is optional, but blessing distribution as per complete traditional procedure is essential.',
+    'मनोकामना की पूर्ति': 'Fulfillment of wishes',
+    'सुख और समृद्धि': 'Happiness and prosperity',
+    'परिवार की रक्षा': 'Family protection',
+    'सभी प्रकार की सिद्धि': 'All kinds of blessings',
+    
+    // Vastu Poojan
+    'वास्तु पूजा का महत्व:': 'Vastu Puja\' Importance:',
+    'घर और कार्यालय की शुभता के लिए अनिवार्य। वास्तु दोषों से मुक्ति और सकारात्मक ऊर्जा का प्रवाह सुनिश्चित करता है।': 'Essential for auspiciousness of home and office. Ensures freedom from Vastu defects and positive energy flow.',
+    'विस्तृत वास्तु पूजा विधि (2.5-3 घंटे):': 'Detailed Vastu Puja Procedure (2.5-3 hours):',
+    'भूमि शोधन:': 'Earth Purification:',
+    'पूजा स्थान की गंगाजल से शुद्धि, नमक का छिड़काव': 'Purifying worship place with Ganges water, sprinkling salt',
+    'वास्तु मंडल:': 'Vastu Mandala:',
+    'भूमि पर 64 वर्गाकार पुरुष (वास्तु पुरुष) का चित्र बनाना': 'Drawing 64 square Vastu Purush symbols on the ground',
+    'पंचदिक पूजन:': 'Five Direction Worship:',
+    'पूरब, पश्चिम, उत्तर, दक्षिण, केंद्र की पूजा अलग-अलग देवताओं के साथ': 'Worshipping East, West, North, South, Center with different deities',
+    'वास्तु बीज मंत्र से हवन (आमिस - घी, अनाज, तिल)': 'Havan with Vastu seed mantras (offerings - ghee, grains, sesame)',
+    'घर की परिक्रमा:': 'House Circumambulation:',
+    'घर के चारों कोनों में पूजा, प्रत्येक कोने में फूल व दीप': 'Worshipping all four corners of the house, flowers and lamps at each corner',
+    'शांति मंत्र:': 'Peace Mantras:',
+    'सभी नकारात्मक शक्तियों के निवारण के लिए': 'To remove all negative forces',
+    'आशीर्वाद:': 'Blessings:',
+    'घर की खुशहाली के लिए आशीर्वाद वचन': 'Blessing words for home happiness',
+    'आवश्यक सामान:': 'Required Items:',
+    'गंगाजल, नमक, नई बाल्टी, तिल, चावल, गेहूं, जौ, मसूर, उड़द, धान, नारियल, आम के पत्ते, फूल, दीप।': 'Ganges water, salt, new bucket, sesame, rice, wheat, barley, lentils, black gram, rice plant, coconut, mango leaves, flowers, lamps.',
+    'वास्तु दोष निवारण:': 'Vastu Defect Remedies:',
+    'उत्तर-दक्षिण की असमानता, दरवाजे की गलत दिशा, रसोई की स्थिति, तालाब पास होना - सभी समस्याओं से सुरक्षा।': 'North-South imbalance, wrong door direction, kitchen location, nearby water body - protection from all problems.',
+    'भौतिक परिणाम:': 'Physical Results:',
+    'घर में शांति व सकारात्मक वातावरण, परिवार में रोग व कलह में कमी, व्यापार में वृद्धि।': 'Peace and positive atmosphere at home, reduced illness and conflict in family, business growth.',
+    'घर में सुख-शांति': 'Peace and happiness at home',
+    'वास्तु दोषों का निवारण': 'Removal of Vastu defects',
+    'परिवार की समृद्धि': 'Family prosperity',
+    'कार्यालय में सफलता': 'Success in office',
+    
+    // Grih Pravesh
+    'गृह प्रवेश का महत्व:': 'House Warming\' Importance:',
+    'नए घर में प्रवेश से पहले वैदिक पूजा अनिवार्य है। यह घर को पवित्र बनाता है और नकारात्मक ऊर्जा को दूर करता है।': 'Vedic puja is essential before entering a new home. It purifies the house and removes negative energy.',
+    'विस्तृत गृह प्रवेश विधि (2.5-3 घंटे):': 'Detailed House Warming Procedure (2.5-3 hours):',
+    'चरण 1 - भूमि शोधन:': 'Step 1 - Earth Purification:',
+    'घर का गंगाजल से पूरी तरह झाड़ना-पोंछना': 'Complete washing of home with Ganges water',
+    'चरण 2 - द्वार पूजन:': 'Step 2 - Door Worship:',
+    'मुख्य द्वार पर गणेश, लक्ष्मी का आह्वान': 'Invocation of Ganesha and Lakshmi at the main door',
+    'चरण 3 - कलश स्थापना:': 'Step 3 - Pot Installation:',
+    'मिट्टी के कलश में आम के पत्तों व नारियल रखकर स्थापन': 'Installing clay pot with mango leaves and coconut',
+    'चरण 4 - चार दिशाओं में हवन:': 'Step 4 - Four Direction Fire Rituals:',
+    'पूरब, पश्चिम, उत्तर, दक्षिण में अलग-अलग मंत्रों से हवन': 'Fire rituals in East, West, North, South with different mantras',
+    'चरण 5 - घर की परिक्रमा:': 'Step 5 - House Circumambulation:',
+    'सभी कमरों का दीप से आरती, प्रत्येक कोने में फूल': 'Aarti of all rooms with lamps, flowers in each corner',
+    'चरण 6 - रसोई पूजन:': 'Step 6 - Kitchen Worship:',
+    'रसोई में अग्नि देव को नमस्कार, घर की पाकशाली का विशेष पूजन': 'Salutation to Fire God in kitchen, special worship of the kitchen',
+    'चरण 7 - शांति मंत्र:': 'Step 7 - Peace Mantras:',
+    'पूरे घर में सुख-शांति के लिए मंत्र पाठ': 'Chanting mantras for peace and happiness throughout the house',
+    'चरण 8 - आरती व दीप:': 'Step 8 - Aarti and Lamps:',
+    'सभी को प्रसाद, घर में दीप प्रज्वलन': 'Blessing for all, lighting lamps in the house',
+    'गंगाजल, नई मिट्टी का कलश, नारियल, आम के पत्ते, नई बाल्टी, तिल, चावल, नमक, गेहूं, दही, शहद, घी, फूल (गुलाब, गेंदा), दीप, घंटी।': 'Ganges water, new clay pot, coconut, mango leaves, new bucket, sesame, rice, salt, wheat, yogurt, honey, ghee, flowers (roses, marigolds), lamps, bells.',
+    'सावधानियां:': 'Precautions:',
+    'घर प्रवेश के पहले दिन भूमि में आसन लगाकर सो न सोएं। पहली रात परिवार के साथ घर में रहें। गृह प्रवेश के 1-2 सप्ताह पहले या बाद में नहीं करें।': 'Do not sleep sitting on the ground on the first day of entry. Spend the first night in the house with family. Should not be done 1-2 weeks before or after.',
+    'क्षेत्र विशेष अनुभव:': 'Area-Specific Experience:',
+    'Whitefield, Electronic City, Koramangala, Jayanagar, Indiranagar - सभी कॉलोनियों में 250+ नए घरों में पूजा संपन्न किए।': 'Conducted pujas in 250+ new homes across Whitefield, Electronic City, Koramangala, Jayanagar, Indiranagar.',
+    'परिणाम:': 'Results:',
+    'पहली रात ही घर की ऊर्जा बदल जाती है, परिवार को शांति और खुशहाली मिलती है, सदस्यों का स्वास्थ्य अच्छा रहता है।': 'House energy changes from the first night, family gets peace and happiness, members stay healthy.',
+    'घर में सुख-समृद्धि': 'Happiness and prosperity at home',
+    'परिवार की रक्षा': 'Family protection',
+    'नकारात्मक ऊर्जा का निवारण': 'Removal of negative energy',
+    'दीर्घायु और स्वास्थ्य': 'Longevity and health',
+};
+
+
 // Language Toggle Functionality
 function initializeLanguageToggle() {
     const languageToggle = document.getElementById('language-toggle');
@@ -542,6 +690,9 @@ function updateLanguage() {
 
     // Universal translator for all elements with data-hi and data-en attributes
     translateAllElements();
+    
+    // Translate detailed service content
+    translateServiceDetails();
 }
 
 function translateAllElements() {
@@ -617,6 +768,51 @@ function translateAllElements() {
     if (footerLogoTitle && footerLogoTitle.hasAttribute(langKey)) {
         footerLogoTitle.textContent = footerLogoTitle.getAttribute(langKey);
     }
+}
+
+function translateServiceDetails() {
+    // Translate the detailed service card content
+    const serviceDetails = document.querySelectorAll('.service-details');
+    
+    serviceDetails.forEach(detail => {
+        // Translate all text nodes recursively
+        walkAndTranslateNodes(detail);
+    });
+}
+
+function walkAndTranslateNodes(node) {
+    // Process text nodes
+    Array.from(node.childNodes).forEach(child => {
+        if (child.nodeType === Node.TEXT_NODE) {
+            // Translate text for this node
+            child.textContent = translateText(child.textContent);
+        } else if (child.nodeType === Node.ELEMENT_NODE) {
+            // For element nodes, process recursively
+            walkAndTranslateNodes(child);
+        }
+    });
+}
+
+function translateText(text) {
+    if (!text) return text;
+    
+    let translatedText = text;
+    
+    if (currentLanguage === 'en') {
+        // Translate from Hindi to English
+        Object.entries(contentTranslations).forEach(([hindi, english]) => {
+            const regex = new RegExp('\\b' + hindi.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '\\b', 'g');
+            translatedText = translatedText.replace(regex, english);
+        });
+    } else {
+        // Translate from English to Hindi (reverse mapping)
+        Object.entries(contentTranslations).forEach(([hindi, english]) => {
+            const regex = new RegExp('\\b' + english.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '\\b', 'g');
+            translatedText = translatedText.replace(regex, hindi);
+        });
+    }
+    
+    return translatedText;
 }
 
 function updateLanguageButton() {
