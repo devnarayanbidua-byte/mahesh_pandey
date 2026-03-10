@@ -6,8 +6,11 @@ const lightboxImage = document.getElementById('lightbox-image');
 const lightboxCaption = document.getElementById('lightbox-caption');
 const lightboxClose = document.querySelector('.lightbox-close');
 
+// Language state — declared early to prevent hoisting issues
+let currentLanguage = 'en';
+
 // Initialize when DOM is loaded
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     initializeNavigation();
     initializeGallery();
     initializeScrollEffects();
@@ -18,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
 function initializeNavigation() {
     // Smooth scrolling for navigation links
     navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
+        link.addEventListener('click', function (e) {
             e.preventDefault();
             const targetId = this.getAttribute('href');
             const targetSection = document.querySelector(targetId);
@@ -62,20 +65,20 @@ function initializeGallery() {
     const galleryItems = document.querySelectorAll('.gallery-item img');
 
     galleryItems.forEach(img => {
-        img.addEventListener('click', function() {
+        img.addEventListener('click', function () {
             openLightbox(this.src, this.alt);
         });
     });
 
     // Close lightbox when clicking outside the image
-    lightbox.addEventListener('click', function(e) {
+    lightbox.addEventListener('click', function (e) {
         if (e.target === lightbox) {
             closeLightbox();
         }
     });
 
     // Close lightbox with Escape key
-    document.addEventListener('keydown', function(e) {
+    document.addEventListener('keydown', function (e) {
         if (e.key === 'Escape' && lightbox.classList.contains('show')) {
             closeLightbox();
         }
@@ -98,7 +101,7 @@ function closeLightbox() {
 function initializeScrollEffects() {
     let lastScrollTop = 0;
 
-    window.addEventListener('scroll', function() {
+    window.addEventListener('scroll', function () {
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
         // Add scrolled class to navbar
@@ -130,7 +133,7 @@ function initializeLoadingAnimation() {
         rootMargin: '0px 0px -50px 0px'
     };
 
-    const observer = new IntersectionObserver(function(entries) {
+    const observer = new IntersectionObserver(function (entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('loading');
@@ -148,11 +151,11 @@ function initializeServiceCards() {
     const serviceCards = document.querySelectorAll('.service-card');
 
     serviceCards.forEach(card => {
-        card.addEventListener('mouseenter', function() {
+        card.addEventListener('mouseenter', function () {
             this.style.transform = 'translateY(-10px) scale(1.02)';
         });
 
-        card.addEventListener('mouseleave', function() {
+        card.addEventListener('mouseleave', function () {
             this.style.transform = 'translateY(0) scale(1)';
         });
     });
@@ -163,7 +166,7 @@ function initializeWhatsApp() {
     const whatsappButtons = document.querySelectorAll('a[href*="wa.me"]');
 
     whatsappButtons.forEach(button => {
-        button.addEventListener('click', function(e) {
+        button.addEventListener('click', function (e) {
             // Track WhatsApp clicks (optional analytics)
             console.log('WhatsApp contact initiated');
         });
@@ -180,7 +183,7 @@ function optimizePerformance() {
     // Lazy load images
     const images = document.querySelectorAll('img[data-src]');
 
-    const imageObserver = new IntersectionObserver(function(entries) {
+    const imageObserver = new IntersectionObserver(function (entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const img = entry.target;
@@ -218,7 +221,7 @@ function toggleServiceDetails(button) {
 }
 
 // Call additional features after main initialization
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // Wait a bit for main initialization
     setTimeout(initializeAdditionalFeatures, 100);
 });
@@ -237,7 +240,7 @@ function debounce(func, wait) {
 }
 
 // Throttled scroll handler for better performance
-const throttledScrollHandler = debounce(function() {
+const throttledScrollHandler = debounce(function () {
     updateActiveNavLink();
 }, 100);
 
@@ -248,7 +251,7 @@ window.addEventListener('scroll', throttledScrollHandler);
 // Preload critical images
 function preloadImages() {
     const criticalImages = [
-        'images/gallery/pandit-ji.jpeg',
+        'images/gallery/pandit-ji.png',
         'images/gallery/aacharya certificate.jpeg'
     ];
 
@@ -262,13 +265,13 @@ function preloadImages() {
 window.addEventListener('load', preloadImages);
 
 // Error handling
-window.addEventListener('error', function(e) {
+window.addEventListener('error', function (e) {
     console.error('JavaScript error:', e.error);
 });
 
 // Service Worker registration (for PWA capabilities - optional)
 if ('serviceWorker' in navigator) {
-    window.addEventListener('load', function() {
+    window.addEventListener('load', function () {
         // Register service worker for offline capabilities
         // navigator.serviceWorker.register('/sw.js');
     });
@@ -277,7 +280,7 @@ if ('serviceWorker' in navigator) {
 // Accessibility improvements
 function initializeAccessibility() {
     // Add focus management for lightbox
-    lightboxClose.addEventListener('keydown', function(e) {
+    lightboxClose.addEventListener('keydown', function (e) {
         if (e.key === 'Enter' || e.key === ' ') {
             closeLightbox();
         }
@@ -305,7 +308,7 @@ function trackEvent(eventName, eventData) {
 trackEvent('page_view', { page: window.location.pathname });
 
 // Track WhatsApp clicks
-document.addEventListener('click', function(e) {
+document.addEventListener('click', function (e) {
     if (e.target.closest('a[href*="wa.me"]')) {
         trackEvent('whatsapp_click', { source: e.target.textContent.trim() });
     }
@@ -517,7 +520,7 @@ const translations = {
     }
 };
 
-let currentLanguage = 'en';
+// (currentLanguage already declared at top of file)
 
 // Content Translation Mapping for detailed service descriptions
 const contentTranslations = {
@@ -526,14 +529,14 @@ const contentTranslations = {
     'कम पढ़ें': 'Read Less',
     'संपर्क करें': 'Contact Us',
     'लाभ:': 'Benefits:',
-    
+
     // Common links and buttons
     'मुख्य': 'Home',
     'परिचय': 'About',
     'सेवाएं': 'Services',
     'गैलरी': 'Gallery',
     'संपर्क': 'Contact',
-    
+
     // Hero section
     'वैदिक': 'Vedic',
     'आधुनिक': 'Modern',
@@ -542,7 +545,7 @@ const contentTranslations = {
     'शास्त्री आचार्य': 'Shastri Acharya',
     'वैदिक पंडित': 'Vedic Pandit',
     'हिंदू पुजारी': 'Hindu Priest',
-    
+
     // About section
     'आचार्य महेश पंडित जी': 'Acharya Mahesh Pandit Ji',
     'जन्म स्थान:': 'Birthplace:',
@@ -557,11 +560,11 @@ const contentTranslations = {
     'कर्मकांड एवं कथा वाचन': 'Karma Kanda & Katha Vachan',
     'अनुभव:': 'Experience:',
     '17+ वर्ष': '17+ Years',
-    
+
     // Services section header
     'हमारी सेवाएं': 'Our Services',
     'सभी वैदिक पूजा सेवाएं - गणेश पूजन, विवाह संस्कार, गृह प्रवेश, वास्तु शांति, कथा वाचन': 'All Vedic Pooja Services - Ganesh Poojan, Marriage Ceremony, Grih Pravesh, Vastu Shanti, Katha Vachan',
-    
+
     // Ganesh Poojan
     'गणेश जी का महत्व:': 'Lord Ganesha\' Importance:',
     'विस्तृत पूजा विधि:': 'Detailed Pooja Procedure:',
@@ -587,7 +590,7 @@ const contentTranslations = {
     'बुद्धि और ज्ञान की प्राप्ति': 'Gaining wisdom and knowledge',
     'विघ्नों का निवारण': 'Removal of obstacles',
     'समृद्धि और धनलाभ': 'Prosperity and financial gain',
-    
+
     // Lakshmi Poojan
     'लक्ष्मी जी का महत्व:': 'Goddess Lakshmi\' Importance:',
     'धन, समृद्धि और वैभव की देवी। वैदिक ग्रंथों में उनका उल्लेख सर्वश्रेष्ठ देवी के रूप में है।': 'Goddess of wealth, prosperity and splendor. Mentioned as the supreme goddess in Vedic scriptures.',
@@ -611,7 +614,7 @@ const contentTranslations = {
     'सुख-समृद्धि का आशीर्वाद': 'Blessing of happiness and prosperity',
     'परिवार में सौहार्द': 'Harmony in family',
     'व्यापार में सफलता': 'Success in business',
-    
+
     // Satyanarayan Poojan
     'सत्यनारायण जी का महत्व:': 'Lord Satyanarayan\' Importance:',
     'सच्चाई और धर्म के रक्षक। उनकी कथा सुनने से घर में सुख-समृद्धि आती है और मनोकामनाएं पूर्ण होती हैं।': 'Protector of truth and dharma. Listening to his story brings happiness and prosperity to the home and fulfills desires.',
@@ -639,7 +642,7 @@ const contentTranslations = {
     'सुख और समृद्धि': 'Happiness and prosperity',
     'परिवार की रक्षा': 'Family protection',
     'सभी प्रकार की सिद्धि': 'All kinds of blessings',
-    
+
     // Vastu Poojan
     'वास्तु पूजा का महत्व:': 'Vastu Puja\' Importance:',
     'घर और कार्यालय की शुभता के लिए अनिवार्य। वास्तु दोषों से मुक्ति और सकारात्मक ऊर्जा का प्रवाह सुनिश्चित करता है।': 'Essential for auspiciousness of home and office. Ensures freedom from Vastu defects and positive energy flow.',
@@ -667,7 +670,7 @@ const contentTranslations = {
     'वास्तु दोषों का निवारण': 'Removal of Vastu defects',
     'परिवार की समृद्धि': 'Family prosperity',
     'कार्यालय में सफलता': 'Success in office',
-    
+
     // Office Opening
     'कार्यालय उद्घाटन का महत्व:': 'Office Opening Importance:',
     'व्यापार की सफलता के लिए अनिवार्य। कार्यालय को शुभ बनाता है और सकारात्मक ऊर्जा लाता है।': 'Essential for business success. Makes office auspicious and brings positive energy.',
@@ -679,7 +682,7 @@ const contentTranslations = {
     'कर्मचारियों की समृद्धि': 'Employee prosperity',
     'कार्यालय में सकारात्मक वातावरण': 'Positive atmosphere in office',
     'लाभ और प्रतिष्ठा': 'Profit and reputation',
-    
+
     // Marriage Ceremony
     'विवाह संस्कार का महत्व:': 'Marriage Ceremony Importance:',
     'जीवन का सबसे पवित्र संस्कार। वैदिक रीति की परंपरा में किया जाता है, दो आत्माओं को एक करता है।': 'Most sacred sacrament of life. Performed in Vedic tradition, unites two souls.',
@@ -708,7 +711,7 @@ const contentTranslations = {
     'परिवार की स्थिरता': 'Family stability',
     'संतान सुख': 'Children\'s happiness',
     'आध्यात्मिक उन्नति': 'Spiritual progress',
-    
+
     // Baby Naming
     'नामकरण संस्कार का महत्व:': 'Baby Naming Ceremony Importance:',
     'बच्चे के जीवन की दिशा तय करने वाला संस्कार। शास्त्रों में नाम का बहुत महत्व बताया गया है - नाम में ही बालक के भविष्य की परछाई होती है।': 'Ceremony determining child\'s life direction. Name has great importance in scriptures - child\'s future is reflected in the name.',
@@ -731,7 +734,7 @@ const contentTranslations = {
     'सकारात्मक गुणों का विकास': 'Development of positive qualities',
     'परिवार की खुशी': 'Family happiness',
     'आध्यात्मिक संरक्षण': 'Spiritual protection',
-    
+
     // Annaprasan
     'अन्नप्राशन संस्कार का महत्व:': 'First Feeding Ceremony Importance:',
     'बच्चे को सुबुद्धि, बल और स्वास्थ्य प्रदान करता है।': 'Provides child with wisdom, strength and health.',
@@ -741,7 +744,7 @@ const contentTranslations = {
     'बच्चे का स्वस्थ विकास': 'Child\'s healthy development',
     'ज्ञान और बुद्धि की प्राप्ति': 'Gaining knowledge and wisdom',
     'दीर्घायु और समृद्धि': 'Longevity and prosperity',
-    
+
     // Katha Vachan Services
     'सुंदरकांड का महत्व:': 'Sundarkand Importance:',
     'रामायण का सबसे शक्तिशाली कांड। सभी प्रकार की समस्याओं का समाधान करता है।': 'Most powerful section of Ramayana. Solves all kinds of problems.',
@@ -752,7 +755,7 @@ const contentTranslations = {
     'शक्ति और साहस की प्राप्ति': 'Gaining strength and courage',
     'रोगों से रक्षा': 'Protection from diseases',
     'मनोकामना की पूर्ति': 'Fulfillment of wishes',
-    
+
     // Ramcharit Manas
     'रामचरित मानस का महत्व:': 'Ramcharit Manas Importance:',
     'भक्ति का सर्वोच्च ग्रंथ। राम जी के जीवन से सीखने वाला पाठ।': 'Supreme scripture of devotion. Lessons from Lord Ram\'s life.',
@@ -762,7 +765,7 @@ const contentTranslations = {
     'भक्ति और ज्ञान की प्राप्ति': 'Gaining devotion and knowledge',
     'सद्गुणों का विकास': 'Development of virtues',
     'मोक्ष की प्राप्ति': 'Attainment of salvation',
-    
+
     // Chandi Path
     'चंडी पाठ का महत्व:': 'Chandi Path Importance:',
     'देवी की शक्ति का सबसे बड़ा स्तोत्र। सभी प्रकार के शत्रुओं से रक्षा करता है।': 'Greatest hymn of Goddess power. Protects from all enemies.',
@@ -771,7 +774,7 @@ const contentTranslations = {
     'साहस और शक्ति की प्राप्ति': 'Gaining courage and strength',
     'रोगों से मुक्ति': 'Freedom from diseases',
     'सभी प्रकार की सिद्धि': 'All kinds of blessings',
-    
+
     // Kundli Milan
     'कुंडली मिलान का महत्व:': 'Kundli Milan Importance:',
     'विवाह पूर्व अनिवार्य। दोनों परिवारों की compatability check।': 'Essential before marriage. Compatibility check of both families.',
@@ -779,7 +782,7 @@ const contentTranslations = {
     'सुखी वैवाहिक जीवन': 'Happy married life',
     'संतान सुख': 'Children happiness',
     'दोनों परिवारों की खुशी': 'Happiness of both families',
-    
+
     // Panchang Paramarsh
     'पंचांग परामर्श का महत्व:': 'Panchang Consultation Importance:',
     'शुभ कार्यों के लिए सही समय का निर्धारण। जीवन में सफलता का आधार।': 'Determining right time for auspicious works. Foundation of life success.',
@@ -787,12 +790,12 @@ const contentTranslations = {
     'विघ्नों का निवारण': 'Removal of obstacles',
     'सकारात्मक परिणाम': 'Positive results',
     'जीवन में संतुलन': 'Balance in life',
-    
+
     // Bhagwat Katha
     'भागवत कथा का महत्व:': 'Bhagwat Katha Importance:',
     'भक्ति का सर्वोच्च ग्रंथ। कृष्ण जी के जीवन से सीखने वाला पाठ।': 'Supreme scripture of devotion. Lessons from Lord Krishna\'s life.',
     'कृष्ण पूजा, कथा पाठ, भजन, आरती।': 'Krishna worship, story recitation, hymns, aarti.',
-    
+
     // Gallery
     'हमारे कार्य': 'Our Work',
     'हमारे वैदिक पूजा और कथा वाचन कार्यक्रमों के फोटो': 'Photos of our Vedic pooja and katha vachan programs',
@@ -802,7 +805,7 @@ const contentTranslations = {
     'देव नमस्कार': 'Dev Namaskar',
     'अनुष्ठान': 'Anushthan',
     'शिवार्चन': 'Shivarchan',
-    
+
     // Contact section
     'संपर्क करें': 'Contact Us',
     'वैदिक पंडित से संपर्क करें - सभी हिंदू धार्मिक सेवाएं': 'Contact our Vedic Pandit - All Hindu religious services',
@@ -812,11 +815,11 @@ const contentTranslations = {
     'पता': 'Address',
     'अभी संपर्क करें': 'Contact Now',
     'आपके धार्मिक कार्यों को सुचारू रूप से संपन्न करवाने के लिए': 'For smooth completion of your religious works',
-    
+
     // Footer
     '© 2025 आचार्य महेश पंडित जी. सर्वाधिकार सुरक्षित।': '© 2025 Acharya Mahesh Pandit Ji. All rights reserved.',
     'वैदिक परंपरा का सम्मान करते हुए': 'Respecting Vedic traditions',
-    
+
     // Grih Pravesh
     'गृह प्रवेश का महत्व:': 'House Warming\' Importance:',
     'नए घर में प्रवेश से पहले वैदिक पूजा अनिवार्य है। यह घर को पवित्र बनाता है और नकारात्मक ऊर्जा को दूर करता है।': 'Vedic puja is essential before entering a new home. It purifies the house and removes negative energy.',
@@ -874,7 +877,7 @@ function updateLanguage() {
 
     // Universal translator for all elements with data-hi and data-en attributes
     translateAllElements();
-    
+
     // Translate detailed service content
     translateServiceDetails();
 }
@@ -882,10 +885,10 @@ function updateLanguage() {
 function translateAllElements() {
     // Get the language key to use (hi or en)
     const langKey = 'data-' + currentLanguage;
-    
+
     // Find all elements with language data attributes
     const allElements = document.querySelectorAll('[data-hi], [data-en]');
-    
+
     allElements.forEach(el => {
         const translation = el.getAttribute(langKey);
         if (translation) {
@@ -904,30 +907,30 @@ function translateAllElements() {
             }
         }
     });
-    
+
     // Special handling for hero title spans
     const vedicSpan = document.querySelector('.vedic-text');
     const modernSpan = document.querySelector('.modern-text');
-    
+
     if (vedicSpan && vedicSpan.hasAttribute(langKey)) {
         vedicSpan.textContent = vedicSpan.getAttribute(langKey);
     }
     if (modernSpan && modernSpan.hasAttribute(langKey)) {
         modernSpan.textContent = modernSpan.getAttribute(langKey);
     }
-    
+
     // Translate all "और पढ़ें" / "Read More" buttons
     const readMoreButtons = document.querySelectorAll('.read-more-btn');
     readMoreButtons.forEach(btn => {
         btn.textContent = currentLanguage === 'hi' ? 'और पढ़ें' : 'Read More';
     });
-    
+
     // Translate all service contact buttons
     const serviceContactButtons = document.querySelectorAll('.service-contact-btn');
     serviceContactButtons.forEach(btn => {
         btn.textContent = currentLanguage === 'hi' ? 'संपर्क करें' : 'Contact Us';
     });
-    
+
     // Translate CTA buttons with icons
     const ctaButtons = document.querySelectorAll('.cta-btn');
     ctaButtons.forEach(btn => {
@@ -941,13 +944,13 @@ function translateAllElements() {
             }
         }
     });
-    
+
     // Update title and logo elements specifically
     const navLogoTitle = document.querySelector('.nav-logo .nav-title');
     if (navLogoTitle && navLogoTitle.hasAttribute(langKey)) {
         navLogoTitle.textContent = navLogoTitle.getAttribute(langKey);
     }
-    
+
     const footerLogoTitle = document.querySelector('.footer-logo .footer-title');
     if (footerLogoTitle && footerLogoTitle.hasAttribute(langKey)) {
         footerLogoTitle.textContent = footerLogoTitle.getAttribute(langKey);
@@ -957,7 +960,7 @@ function translateAllElements() {
 function translateServiceDetails() {
     // Translate the detailed service card content
     const serviceDetails = document.querySelectorAll('.service-details');
-    
+
     serviceDetails.forEach(detail => {
         // Translate all text nodes recursively
         walkAndTranslateNodes(detail);
@@ -979,9 +982,9 @@ function walkAndTranslateNodes(node) {
 
 function translateText(text) {
     if (!text) return text;
-    
+
     let translatedText = text;
-    
+
     if (currentLanguage === 'en') {
         // Translate from Hindi to English
         Object.entries(contentTranslations).forEach(([hindi, english]) => {
@@ -995,7 +998,7 @@ function translateText(text) {
             translatedText = translatedText.replace(regex, hindi);
         });
     }
-    
+
     return translatedText;
 }
 
@@ -1025,7 +1028,7 @@ function initializeLanguageSystem() {
 }
 
 // Call language initialization at page load
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // Initialize language system immediately when DOM is content loaded
     initializeLanguageSystem();
 });
@@ -1038,3 +1041,252 @@ console.log(`
 🌐 Built with HTML, CSS, JavaScript
 🌍 Multi-language Support: Hindi & English
 `);
+
+/* =====================================================
+   PREMIUM FEATURE FUNCTIONS
+   ===================================================== */
+
+// ---- Scroll Progress Bar ----
+window.addEventListener('scroll', function () {
+    const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+    const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    const bar = document.getElementById('scroll-progress');
+    if (bar) bar.style.width = progress + '%';
+
+    // Back to top button visibility
+    const btn = document.getElementById('back-to-top');
+    if (btn) {
+        btn.style.display = scrollTop > 400 ? 'flex' : 'none';
+    }
+});
+
+// ---- Stats Counter Animation ----
+function animateCounter(el) {
+    const target = parseInt(el.getAttribute('data-target'), 10);
+    const duration = 1800;
+    const step = Math.ceil(target / (duration / 16));
+    let current = 0;
+    const timer = setInterval(() => {
+        current = Math.min(current + step, target);
+        el.textContent = current.toLocaleString('en-IN');
+        if (current >= target) clearInterval(timer);
+    }, 16);
+}
+
+// Use IntersectionObserver so counters animate when visible
+(function () {
+    const statNums = document.querySelectorAll('.stat-number');
+    if (!statNums.length) return;
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !entry.target.dataset.animated) {
+                entry.target.dataset.animated = '1';
+                animateCounter(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+    statNums.forEach(el => observer.observe(el));
+})();
+
+// ---- Gallery Filter ----
+function filterGallery(btn, category) {
+    // Update active button
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+
+    // Show/hide items
+    document.querySelectorAll('.gallery-item').forEach(item => {
+        if (category === 'all' || item.dataset.category === category) {
+            item.classList.remove('hidden');
+        } else {
+            item.classList.add('hidden');
+        }
+    });
+}
+
+// ---- FAQ Accordion Toggle ----
+function toggleFaq(btn) {
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+
+    // Close all open FAQs
+    document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+
+    // Open clicked one (if it wasn't already open)
+    if (!isOpen) item.classList.add('open');
+}
+
+// ---- Back To Top (already handled inline, but ensure display on init) ----
+document.addEventListener('DOMContentLoaded', function () {
+    const btn = document.getElementById('back-to-top');
+    if (btn) btn.style.display = 'none';
+});
+
+// ---- Language Toggle Update for New Sections ----
+// Extend existing updateLanguage to also update stat-label, area-name etc.
+const _origUpdateLanguage = typeof updateLanguage === 'function' ? updateLanguage : null;
+function updateLanguageExtended(lang) {
+    if (_origUpdateLanguage) _origUpdateLanguage(lang);
+    // Update stat cards labels
+    document.querySelectorAll('[data-hi][data-en]').forEach(el => {
+        if (el.classList.contains('stat-label') || el.classList.contains('section-subtitle') ||
+            el.classList.contains('gallery-label') || el.classList.contains('filter-btn') ||
+            el.tagName === 'H2' || el.tagName === 'P') {
+            el.textContent = lang === 'hi' ? el.getAttribute('data-hi') : el.getAttribute('data-en');
+        }
+    });
+}
+
+// ---- Page Loader ----
+window.addEventListener('load', function () {
+    const loader = document.getElementById('page-loader');
+    if (loader) {
+        setTimeout(() => {
+            loader.classList.add('loaded');
+            setTimeout(() => loader.remove(), 600);
+        }, 800);
+    }
+});
+
+// ---- Scroll Reveal Animations ----
+(function () {
+    // Auto-add reveal class to all major sections
+    const sections = document.querySelectorAll(
+        'section, .stats-section, .gallery, .testimonials-section, .areas-section, .faq-section, .contact-section'
+    );
+
+    // Add reveal class to section headers and grids
+    sections.forEach((section, i) => {
+        // Add reveal to the section header
+        const header = section.querySelector('.section-header');
+        if (header && !header.classList.contains('reveal')) {
+            header.classList.add('reveal');
+        }
+
+        // Add reveal to grids/content with stagger
+        const grids = section.querySelectorAll(
+            '.stats-grid, .gallery-grid, .testimonials-grid, .areas-grid, .faq-grid, .gallery-filters'
+        );
+        grids.forEach(grid => {
+            if (!grid.classList.contains('reveal')) {
+                grid.classList.add('reveal');
+            }
+        });
+
+        // Add reveal to individual cards with stagger
+        const cards = section.querySelectorAll(
+            '.stat-card, .testimonial-card, .area-chip, .faq-item, .gallery-item'
+        );
+        cards.forEach((card, j) => {
+            if (!card.classList.contains('reveal-scale')) {
+                card.classList.add('reveal-scale');
+                card.style.transitionDelay = (j * 0.05) + 's';
+            }
+        });
+    });
+
+    // Observe all reveal elements
+    const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
+    if (!revealEls.length) return;
+
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('revealed');
+                revealObserver.unobserve(entry.target); // Once revealed, stop watching
+            }
+        });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    revealEls.forEach(el => revealObserver.observe(el));
+})();
+
+// ---- Booking Form to WhatsApp ----
+document.addEventListener('DOMContentLoaded', () => {
+    const bookingForm = document.getElementById('booking-form');
+    if (bookingForm) {
+        bookingForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Get form values
+            const name = document.getElementById('b-name').value.trim();
+            const phone = document.getElementById('b-phone').value.trim();
+            const pooja = document.getElementById('b-pooja').value;
+            const date = document.getElementById('b-date').value;
+            const area = document.getElementById('b-area').value.trim();
+
+            // Format message
+            let message = `*🙏 नई बुकिंग Anfrage (New Booking Request) 🙏*
+            
+👤 *नाम (Name):* ${name}
+📞 *फोन (Phone):* ${phone}
+🕉️ *पूजा/अनुष्ठान (Pooja):* ${pooja}
+📅 *तारीख (Date):* ${date}
+📍 *स्थान (Area):* ${area || 'Not provided'}
+
+कृपया मुझे इस पूजा के बारे में जानकारी दें।`;
+
+            // WhatsApp number (+919810967340)
+            const waNumber = '919810967340';
+            const encodedMessage = encodeURIComponent(message);
+            const waUrl = `https://wa.me/${waNumber}?text=${encodedMessage}`;
+
+            // Open WhatsApp in new tab
+            window.open(waUrl, '_blank');
+        });
+    }
+});
+
+// ---- Typewriter Effect ----
+document.addEventListener('DOMContentLoaded', () => {
+    const typewriterEl = document.getElementById('hero-typewriter');
+    if (!typewriterEl) return;
+
+    // Store current language (default 'hi')
+    let currentLang = localStorage.getItem('panditji_lang') || 'hi';
+
+    const texts = {
+        hi: "सर्वश्रेष्ठ हिंदी पंडित • 17+ साल का अनुभव • वैदिक पूजा सेवाएं",
+        en: "Best Hindi Pandit • 17+ Years Experience • Vedic Pooja Services"
+    };
+
+    let typingTimer;
+
+    function typeText(lang) {
+        // Clear existing
+        clearTimeout(typingTimer);
+        typewriterEl.innerHTML = '';
+        typewriterEl.classList.remove('done');
+
+        const fullText = texts[lang] || texts['hi'];
+        let i = 0;
+
+        function typeChar() {
+            if (i < fullText.length) {
+                typewriterEl.innerHTML += fullText.charAt(i);
+                i++;
+                // random typing speed between 30ms and 80ms
+                const speed = Math.random() * (80 - 30) + 30;
+                typingTimer = setTimeout(typeChar, speed);
+            } else {
+                typewriterEl.classList.add('done');
+            }
+        }
+
+        // Start typing after a short delay
+        setTimeout(typeChar, 500);
+    }
+
+    // Initial type
+    typeText(currentLang);
+
+    // Listen for language changes (hook into existing updateLanguageExtended)
+    const existingUpdateLang = window.updateLanguageExtended;
+    if (typeof existingUpdateLang === 'function') {
+        window.updateLanguageExtended = function (lang) {
+            existingUpdateLang(lang);
+            typeText(lang);
+        };
+    }
+});
