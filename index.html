@@ -64,6 +64,9 @@
     <!-- Sitemap and Robots -->
     <link rel="sitemap" href="/sitemap.xml">
 
+    <!-- StyleSheets -->
+    <link rel="stylesheet" href="css/premium.css">
+
     <!-- Google Fonts Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -183,6 +186,53 @@
     }
     </script>
 
+    <!-- Review Schema for GEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Acharya Mahesh Pandit Ji - Vedic Services",
+        "@id": "https://maheshpanditji.in/#org",
+        "review": [
+            {"@type": "Review", "reviewRating": {"@type": "Rating", "ratingValue": "5"}, "author": {"@type": "Person", "name": "Rajesh Sharma"}, "reviewBody": "Mahesh Pandey ji performed our Grih Pravesh in Koramangala with complete Vedic rituals. Very knowledgeable and punctual. Highly recommended for all families in Bangalore."},
+            {"@type": "Review", "reviewRating": {"@type": "Rating", "ratingValue": "5"}, "author": {"@type": "Person", "name": "Priya Gupta"}, "reviewBody": "We had our daughter's Namkaran ceremony performed by Acharya Mahesh Pandit Ji. The entire family was touched by his spiritual energy and authentic Vedic chanting. Best pandit in Whitefield!"},
+            {"@type": "Review", "reviewRating": {"@type": "Rating", "ratingValue": "5"}, "author": {"@type": "Person", "name": "Suresh Agarwal"}, "reviewBody": "Outstanding Satyanarayan Katha by Mahesh Pandey Ji. His Hindi explanation of every step made the ceremony meaningful for the whole family including children. 5 stars!"}
+        ],
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Vedic Pandit Services Bangalore",
+            "itemListElement": [
+                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Grih Pravesh Pooja Bangalore", "description": "Complete Vedic house warming ceremony for new homes in Bangalore"}},
+                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Hindu Marriage Ceremony Bangalore", "description": "Traditional Vedic Hindu marriage ceremonies conducted across all Bangalore areas"}},
+                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Satyanarayan Katha Bangalore", "description": "Satyanarayana Katha with detailed Hindi explanation for families in Bangalore"}},
+                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Vastu Shanti Pooja Bangalore", "description": "Vastu correction ceremonies for homes and offices in Bangalore"}},
+                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Namkaran Sanskar Bangalore", "description": "Baby naming ceremony as per Hindu Vedic tradition in Bangalore"}}
+            ]
+        }
+    }
+    </script>
+
+    <!-- Speakable Schema for Voice Search & AI -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Acharya Mahesh Pandit Ji - Best Vedic Pandit Bangalore",
+        "speakable": {
+            "@type": "SpeakableSpecification",
+            "cssSelector": [".hero-title", ".hero-description", ".section-title", ".stat-label"]
+        },
+        "about": {
+            "@type": "Person",
+            "name": "Mahesh Pandey",
+            "alternateName": ["Acharya Mahesh Pandit", "Mahesh Pandit Ji", "Pandit Mahesh Pandey"],
+            "jobTitle": "Vedic Pandit & Hindu Priest",
+            "knowsAbout": "Vedic Rituals, Hindu Ceremonies, Grih Pravesh, Marriage, Pooja Services, Jyotish, Vastu",
+            "description": "Mahesh Pandey, known as Acharya Mahesh Pandit Ji, is the best-reviewed Vedic Pandit in Bangalore with 17+ years of experience, 300+ marriages conducted, and 250+ Grih Pravesh ceremonies. He serves all areas of Bangalore including Koramangala, Whitefield, Jayanagar, Indiranagar, HSR Layout, Electronic City, and more."
+        }
+    }
+    </script>
+
     <!-- FAQ Schema for Rich Snippets & Generative AI Search -->
     <script type="application/ld+json">
     {
@@ -291,13 +341,13 @@
                 "@type": "ListItem",
                 "position": 1,
                 "name": "Home",
-                "item": "https://github.com/devnarayanbidua-byte/mahesh_pandey"
+                "item": "https://maheshpanditji.in/"
             },
             {
                 "@type": "ListItem",
                 "position": 2,
                 "name": "About Pandit",
-                "item": "https://github.com/devnarayanbidua-byte/mahesh_pandey#about"
+                "item": "https://maheshpanditji.in/#about"
             },
             {
                 "@type": "ListItem",
@@ -361,10 +411,10 @@
         "name": "Mahesh Pandey",
         "alternateName": ["Acharya Mahesh Pandey", "Acharya Mahesh Pandit", "Mahesh Pandit", "Pandit Mahesh"],
         "description": "Expert Vedic Pandit with 17+ years of experience offering authentic Hindu religious ceremonies",
-        "image": "images/gallery/pandit-ji.png",
-        "url": "https://github.com/devnarayanbidua-byte/mahesh_pandey",
+        "image": "https://maheshpanditji.in/images/gallery/pandit-ji.png",
+        "url": "https://maheshpanditji.in/",
         "telephone": ["+91-7676457013", "+91-7464923758"],
-        "email": "pandit@maheshji.local",
+        "email": "namaste@maheshpanditji.in",
         "jobTitle": "Vedic Pandit",
         "address": {
             "@type": "PostalAddress",
@@ -442,7 +492,30 @@
 </head>
 
 <body>
+    <!-- Page Loader -->
+    <div id="page-loader">
+        <div class="loader-content">
+            <div class="om-spinner">🕉️</div>
+            <p class="loader-text">शुभ लाभ...</p>
+        </div>
+    </div>
+
     <!-- Navigation -->
+    <!-- Scroll Progress Bar -->
+    <div id="scroll-progress"></div>
+
+    <!-- Floating WhatsApp Button -->
+    <div class="whatsapp-float">
+        <a href="https://wa.me/917676457013" target="_blank" rel="noopener noreferrer"
+            aria-label="WhatsApp Mahesh Pandit Ji">
+            <span class="wa-icon">💬</span>
+            <span>WhatsApp बुकिंग</span>
+        </a>
+    </div>
+
+    <!-- Back To Top -->
+    <button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">▲</button>
+
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
@@ -475,9 +548,8 @@
                         <span class="vedic-text" data-hi="वैदिक" data-en="Vedic">वैदिक</span> परंपरा का<br>
                         <span class="modern-text" data-hi="आधुनिक" data-en="Modern">आधुनिक</span> स्वरूप
                     </h1>
-                    <p class="hero-subtitle" data-hi="सर्वश्रेष्ठ हिंदी पंडित • 17+ साल का अनुभव • वैदिक पूजा सेवाएं"
-                        data-en="Best Hindi Pandit • 17+ Years Experience • Vedic Pooja Services">
-                        सर्वश्रेष्ठ हिंदी पंडित • 17+ साल का अनुभव • वैदिक पूजा सेवाएं
+                    <p class="hero-subtitle">
+                        <span class="typewriter-text" id="hero-typewriter"></span>
                     </p>
                     <div class="hero-badges">
                         <span class="badge" data-hi="शास्त्री आचार्य" data-en="Shastri Acharya">शास्त्री आचार्य</span>
@@ -1467,6 +1539,41 @@
         </div>
     </section>
 
+    <!-- Stats / Achievement Counter Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">🕉️</div>
+                    <div class="stat-number" data-target="17">0</div><span class="stat-suffix">+</span>
+                    <div class="stat-label" data-hi="वर्षों का अनुभव" data-en="Years Experience">वर्षों का अनुभव</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">💍</div>
+                    <div class="stat-number" data-target="300">0</div><span class="stat-suffix">+</span>
+                    <div class="stat-label" data-hi="विवाह संस्कार" data-en="Marriages Conducted">विवाह संस्कार</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">🏠</div>
+                    <div class="stat-number" data-target="250">0</div><span class="stat-suffix">+</span>
+                    <div class="stat-label" data-hi="गृह प्रवेश पूजा" data-en="Grih Pravesh">गृह प्रवेश पूजा</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">⭐</div>
+                    <div class="stat-number" data-target="4" data-decimal=".9">4</div><span
+                        class="stat-suffix">.9★</span>
+                    <div class="stat-label" data-hi="परिवारों की Rating" data-en="Family Rating">परिवारों की Rating
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">📍</div>
+                    <div class="stat-number" data-target="25">0</div><span class="stat-suffix">+</span>
+                    <div class="stat-label" data-hi="Bangalore areas" data-en="Bangalore Areas">Bangalore क्षेत्र</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Gallery Section -->
     <section id="gallery" class="gallery">
         <div class="container">
@@ -1478,55 +1585,400 @@
                     <span class="decoration-dot"></span>
                     <span class="decoration-line"></span>
                 </div>
-                <p class="section-subtitle" data-hi="हमारे वैदिक पूजा और कथा वाचन कार्यक्रमों के फोटो"
-                    data-en="Photos of our Vedic pooja and katha vachan programs">हमारे वैदिक पूजा और कथा वाचन
+                <p class="section-subtitle" data-hi="हमारे वैदिक पूजा, यात्रा और कार्यक्रमों के फोटो"
+                    data-en="Photos from our Vedic ceremonies, pilgrimages and programs">हमारे वैदिक पूजा, यात्रा और
                     कार्यक्रमों के फोटो</p>
             </div>
 
+            <!-- Gallery Filters -->
+            <div class="gallery-filters">
+                <button class="filter-btn active" data-filter="all" onclick="filterGallery(this,'all')">सभी /
+                    All</button>
+                <button class="filter-btn" data-filter="pooja" onclick="filterGallery(this,'pooja')">पूजा /
+                    Pooja</button>
+                <button class="filter-btn" data-filter="yatra" onclick="filterGallery(this,'yatra')">यात्रा /
+                    Yatra</button>
+                <button class="filter-btn" data-filter="parivaar" onclick="filterGallery(this,'parivaar')">परिवार /
+                    Family</button>
+                <button class="filter-btn" data-filter="ceremony" onclick="filterGallery(this,'ceremony')">संस्कार /
+                    Ceremony</button>
+            </div>
+
             <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="images/gallery/griha pravesh pooja.jpeg" alt="गृह प्रवेश पूजा" loading="lazy"
+                <!-- Existing images -->
+                <div class="gallery-item" data-category="pooja">
+                    <img src="images/gallery/griha pravesh pooja.jpeg"
+                        alt="गृह प्रवेश पूजा - Grih Pravesh Pooja Bangalore" loading="lazy"
                         onclick="openLightbox(this)">
                     <div class="gallery-label" data-hi="गृह प्रवेश पूजा" data-en="Grih Pravesh">गृह प्रवेश पूजा</div>
                 </div>
-                <div class="gallery-item">
-                    <img src="images/gallery/rudraabhishek.jpeg" alt="रुद्राभिषेक" loading="lazy"
-                        onclick="openLightbox(this)">
+                <div class="gallery-item" data-category="pooja">
+                    <img src="images/gallery/rudraabhishek.jpeg" alt="रुद्राभिषेक - Rudraabhishek Ceremony Bangalore"
+                        loading="lazy" onclick="openLightbox(this)">
                     <div class="gallery-label" data-hi="रुद्राभिषेक" data-en="Rudraabhishek">रुद्राभिषेक</div>
                 </div>
-                <div class="gallery-item">
-                    <img src="images/gallery/vastu santi pooja.jpeg" alt="वास्तु शांति पूजा" loading="lazy"
-                        onclick="openLightbox(this)">
+                <div class="gallery-item" data-category="pooja">
+                    <img src="images/gallery/vastu santi pooja.jpeg" alt="वास्तु शांति पूजा - Vastu Shanti Pooja"
+                        loading="lazy" onclick="openLightbox(this)">
                     <div class="gallery-label" data-hi="वास्तु शांति पूजा" data-en="Vastu Shanti">वास्तु शांति पूजा
                     </div>
                 </div>
-                <div class="gallery-item">
-                    <img src="images/gallery/dev namaskar.jpeg" alt="देव नमस्कार" loading="lazy"
+                <div class="gallery-item" data-category="ceremony">
+                    <img src="images/gallery/dev namaskar.jpeg" alt="देव नमस्कार - Dev Namaskar" loading="lazy"
                         onclick="openLightbox(this)">
                     <div class="gallery-label" data-hi="देव नमस्कार" data-en="Dev Namaskar">देव नमस्कार</div>
                 </div>
-                <div class="gallery-item">
-                    <img src="images/gallery/anushthan.jpeg" alt="अनुष्ठान" loading="lazy" onclick="openLightbox(this)">
+                <div class="gallery-item" data-category="ceremony">
+                    <img src="images/gallery/anushthan.jpeg" alt="अनुष्ठान - Anushthan Ceremony" loading="lazy"
+                        onclick="openLightbox(this)">
                     <div class="gallery-label" data-hi="अनुष्ठान" data-en="Anushthan">अनुष्ठान</div>
                 </div>
-                <div class="gallery-item">
-                    <img src="images/gallery/shivarchan.jpeg" alt="शिवार्चन" loading="lazy"
+                <div class="gallery-item" data-category="pooja">
+                    <img src="images/gallery/shivarchan.jpeg" alt="शिवार्चन - Shivarchan Puja" loading="lazy"
                         onclick="openLightbox(this)">
                     <div class="gallery-label" data-hi="शिवार्चन" data-en="Shivarchan">शिवार्चन</div>
                 </div>
-                <div class="gallery-item">
+                <div class="gallery-item" data-category="ceremony">
                     <img src="images/gallery/dwadashlingtobhadra mandal.jpeg" alt="द्वादश लिंग भद्रा मंडल"
                         loading="lazy" onclick="openLightbox(this)">
                     <div class="gallery-label" data-hi="द्वादश लिंग भद्रा मंडल" data-en="Dwadash Ling Bhadra Mandal">
                         द्वादश लिंग भद्रा मंडल</div>
                 </div>
-                <div class="gallery-item">
-                    <img src="images/gallery/deep prajawal .jpeg" alt="दीप प्रज्वलन" loading="lazy"
+                <div class="gallery-item" data-category="ceremony">
+                    <img src="images/gallery/deep prajawal .jpeg" alt="दीप प्रज्वलन - Deep Prajawal" loading="lazy"
                         onclick="openLightbox(this)">
                     <div class="gallery-label" data-hi="दीप प्रज्वलन" data-en="Deep Prajawal">दीप प्रज्वलन</div>
                 </div>
+                <div class="gallery-item" data-category="pooja">
+                    <img src="images/gallery/griha shanti pooja.jpeg" alt="गृह शांति पूजा" loading="lazy"
+                        onclick="openLightbox(this)">
+                    <div class="gallery-label" data-hi="गृह शांति पूजा" data-en="Griha Shanti">गृह शांति पूजा</div>
+                </div>
+                <!-- New images: save to images/gallery/ to enable them -->
+
+                <div class="gallery-item" data-category="pooja">
+                    <img src="images/gallery/bhumi poojan compny opnining factory nirman.jpeg"
+                        alt="भूमि पूजन - Bhumi Poojan at Bangalore" loading="lazy" onclick="openLightbox(this)">
+                    <div class="gallery-label" data-hi="भूमि पूजन" data-en="Bhumi Poojan">भूमि पूजन</div>
+                </div>
+                <div class="gallery-item" data-category="pooja">
+                    <img src="images/gallery/mandal for vastu pooja.jpeg" alt="वास्तु मंडल - Vastu Pooja Mandal"
+                        loading="lazy" onclick="openLightbox(this)">
+                    <div class="gallery-label" data-hi="वास्तु मंडल" data-en="Vastu Mandal">वास्तु मंडल</div>
+                </div>
+                <div class="gallery-item" data-category="yatra">
+                    <img src="images/gallery/rameswaram yatra .jpeg" alt="रामेश्वरम् तीर्थ यात्रा - Pilgrimage"
+                        loading="lazy" onclick="openLightbox(this)">
+                    <div class="gallery-label" data-hi="तीर्थ यात्रा" data-en="Pilgrimage">तीर्थ यात्रा</div>
+                </div>
+                <div class="gallery-item" data-category="ceremony">
+                    <img src="images/gallery/aacharya certificate.jpeg" alt="आचार्य प्रमाण पत्र - Vedic Certificate"
+                        loading="lazy" onclick="openLightbox(this)">
+                    <div class="gallery-label" data-hi="आचार्य प्रमाण पत्र" data-en="Acharya Certificate">आचार्य प्रमाण
+                        पत्र</div>
+                </div>
             </div>
         </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-tag">⭐ REVIEWS</div>
+                <h2 class="section-title" data-hi="परिवारों की राय" data-en="What Families Say">परिवारों की राय</h2>
+                <div class="title-decoration"><span class="decoration-line"></span><span
+                        class="decoration-dot"></span><span class="decoration-line"></span></div>
+                <p class="section-subtitle" data-hi="150+ परिवारों का विश्वास - 4.9 ★"
+                    data-en="Trusted by 150+ Families - 4.9 ★">150+ परिवारों का विश्वास — 4.9 ★</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Mahesh Pandey Ji ने हमारे नए घर का गृह प्रवेश Koramangala में बहुत ही
+                        शुद्ध विधि से करवाया। पूरी family के साथ एक बहुत ही spiritual experience था। हर mantra का अर्थ
+                        भी बताया।"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">🙏</div>
+                        <div>
+                            <div class="author-name">Rajesh Sharma &amp; Family</div>
+                            <div class="author-location">Koramangala, Bangalore</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"हमारी बेटी के Namkaran Sanskar के लिए Acharya Mahesh Ji को बुलाया। उनकी
+                        अद्भुत Sanskrit chanting और detailed explanation ने सभी को मंत्रमुग्ध कर दिया। Best pandit in
+                        Whitefield!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">🌸</div>
+                        <div>
+                            <div class="author-name">Priya &amp; Anand Gupta</div>
+                            <div class="author-location">Whitefield, Bangalore</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Satyanarayan Katha बहुत शानदार रही। Mahesh Ji ने हर chapter का Hindi
+                        में explanation दिया जिससे बच्चे भी समझ सके। On time, professional, और deeply spiritual। 100%
+                        recommended!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">🕉️</div>
+                        <div>
+                            <div class="author-name">Suresh &amp; Kavitha Agarwal</div>
+                            <div class="author-location">Indiranagar, Bangalore</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Office opening pooja for our IT company in Electronic City was
+                        perfectly conducted. Mahesh Pandey Ji brought positive energy. All employees were impressed.
+                        Highly professional vedic pandit!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">🏢</div>
+                        <div>
+                            <div class="author-name">Vikram Mehta</div>
+                            <div class="author-location">Electronic City, Bangalore</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Vivah Sanskar (Marriage) हमारे बेटे का Mahesh Ji ने conduct किया। 7
+                        घंटे की पूरी Vedic wedding — हर Sanskrit shloka का meaning explained। सच में best wedding pandit
+                        in Jayanagar Bangalore!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">💍</div>
+                        <div>
+                            <div class="author-name">Shyam Lal Tiwari</div>
+                            <div class="author-location">Jayanagar, Bangalore</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Vastu Shanti pooja for our new flat in HSR Layout. Acharya Ji came with
+                        all samagri, performed complete havan, and explained why Vastu is important. Our home feels
+                        peaceful now. Excellent service!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">🏡</div>
+                        <div>
+                            <div class="author-name">Meenakshi Rajan</div>
+                            <div class="author-location">HSR Layout, Bangalore</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="video-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-tag" style="color:var(--gold);border-color:var(--gold);">🎥 VIDEOS</div>
+                <h2 class="section-title" style="color:#fff;" data-hi="पूजा वीडियो" data-en="Ceremony Videos">पूजा
+                    वीडियो</h2>
+                <div class="title-decoration"><span class="decoration-line" style="background:var(--gold)"></span><span
+                        class="decoration-dot" style="background:var(--gold)"></span><span class="decoration-line"
+                        style="background:var(--gold)"></span></div>
+                <p class="section-subtitle" style="color:rgba(255,255,255,0.75);"
+                    data-hi="Bangalore में हमारी वैदिक पूजाओं की झलक"
+                    data-en="Glimpse of our Vedic ceremonies in Bangalore">
+                    Bangalore में हमारी वैदिक पूजाओं की झलक</p>
+            </div>
+            <div class="video-grid">
+                <div class="video-card">
+                    <video controls preload="metadata" playsinline>
+                        <source src="videos/annadhivash-shivarchan.mp4" type="video/mp4">
+                        आपका browser video support नहीं करता।
+                    </video>
+                    <div class="video-info">
+                        <h4>🕉️ अन्नाधिवास शिवार्चन</h4>
+                        <p>Annadhivash Shivarchan — Vedic Shiva Ceremony, Bangalore</p>
+                    </div>
+                </div>
+                <div class="video-card">
+                    <video controls preload="metadata" playsinline>
+                        <source src="videos/rudraabhishek-shatru-badha.mp4" type="video/mp4">
+                        आपका browser video support नहीं करता।
+                    </video>
+                    <div class="video-info">
+                        <h4>🔱 रुद्राभिषेक — शत्रु बाधा निवारण</h4>
+                        <p>Rudraabhishek for Enemy Protection — Vedic Havan, Bangalore</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bangalore Service Areas Section -->
+    <section class="areas-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-tag">📍 SERVICE AREAS</div>
+                <h2 class="section-title" data-hi="Bangalore में सेवा क्षेत्र" data-en="Bangalore Service Areas">
+                    Bangalore में सेवा क्षेत्र</h2>
+                <div class="title-decoration"><span class="decoration-line"></span><span
+                        class="decoration-dot"></span><span class="decoration-line"></span></div>
+                <p class="section-subtitle">Bangalore के सभी प्रमुख areas में उपलब्ध — North, South, East, West</p>
+            </div>
+            <div class="areas-grid">
+                <div class="area-chip"><span class="area-icon">🏙️</span><span class="area-name">Koramangala</span>
+                </div>
+                <div class="area-chip"><span class="area-icon">🏙️</span><span class="area-name">Whitefield</span></div>
+                <div class="area-chip"><span class="area-icon">🏙️</span><span class="area-name">Jayanagar</span></div>
+                <div class="area-chip"><span class="area-icon">🏙️</span><span class="area-name">Indiranagar</span>
+                </div>
+                <div class="area-chip"><span class="area-icon">🏙️</span><span class="area-name">Electronic City</span>
+                </div>
+                <div class="area-chip"><span class="area-icon">🏙️</span><span class="area-name">Banashankari</span>
+                </div>
+                <div class="area-chip"><span class="area-icon">🏙️</span><span class="area-name">HSR Layout</span></div>
+                <div class="area-chip"><span class="area-icon">🏙️</span><span class="area-name">Marathahalli</span>
+                </div>
+                <div class="area-chip"><span class="area-icon">🏙️</span><span class="area-name">Malleshwaram</span>
+                </div>
+                <div class="area-chip"><span class="area-icon">🏙️</span><span class="area-name">Rajajinagar</span>
+                </div>
+                <div class="area-chip"><span class="area-icon">🏙️</span><span class="area-name">Yelahanka</span></div>
+                <div class="area-chip"><span class="area-icon">🏙️</span><span class="area-name">Hebbal</span></div>
+                <div class="area-chip"><span class="area-icon">🏙️</span><span class="area-name">BTM Layout</span></div>
+                <div class="area-chip"><span class="area-icon">🏙️</span><span class="area-name">Basavanagudi</span>
+                </div>
+                <div class="area-chip"><span class="area-icon">🏙️</span><span class="area-name">MG Road</span></div>
+                <div class="area-chip"><span class="area-icon">🏙️</span><span class="area-name">Bellandur</span></div>
+                <div class="area-chip"><span class="area-icon">🏙️</span><span class="area-name">Sarjapur Road</span>
+                </div>
+                <div class="area-chip"><span class="area-icon">🏙️</span><span class="area-name">JP Nagar</span></div>
+                <div class="area-chip"><span class="area-icon">🏙️</span><span class="area-name">Frazer Town</span>
+                </div>
+                <div class="area-chip"><span class="area-icon">🏙️</span><span class="area-name">Kalyan Nagar</span>
+                </div>
+                <div class="area-chip"><span class="area-icon">🏙️</span><span class="area-name">Ulsoor</span></div>
+                <div class="area-chip"><span class="area-icon">🏙️</span><span class="area-name">Majestic</span></div>
+                <div class="area-chip"><span class="area-icon">🏙️</span><span class="area-name">Yeshwanthpur</span>
+                </div>
+                <div class="area-chip"><span class="area-icon">🏙️</span><span class="area-name">Nagarbhavi</span></div>
+                <div class="area-chip"><span class="area-icon">🚀</span><span class="area-name">और अधिक...</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section (Rich Snippet + GEO Content) -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-tag" style="color:var(--green);border-color:var(--green);">❓ FAQ</div>
+                <h2 class="section-title" data-hi="अक्सर पूछे जाने वाले प्रश्न" data-en="Frequently Asked Questions">
+                    अक्सर पूछे जाने वाले प्रश्न</h2>
+                <div class="title-decoration"><span class="decoration-line"></span><span
+                        class="decoration-dot"></span><span class="decoration-line"></span></div>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">Bangalore में best Hindi pandit कौन
+                        हैं?</button>
+                    <div class="faq-answer">Acharya Mahesh Pandey (Mahesh Pandit Ji) — 17+ years experience, 4.9★ rating
+                        — Bangalore के सभी areas में Hindi and Sanskrit में Vedic ceremonies conduct करते हैं।
+                        Whitefield से Electronic City तक सेवा उपलब्ध है।</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">Grih Pravesh Pooja के लिए कितने advance में
+                        book करना होगा?</button>
+                    <div class="faq-answer">Grih Pravesh के लिए 5-7 दिन पहले WhatsApp करें। Marriage ceremonies के लिए
+                        2-3 weeks advance बुकिंग recommended है। Same-day emergency pooja भी availability के अनुसार
+                        possible है।</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">क्या Mahesh Pandey Ji Bangalore के सभी areas
+                        में जाते हैं?</button>
+                    <div class="faq-answer">हाँ! Koramangala, Whitefield, Jayanagar, Indiranagar, HSR Layout, Electronic
+                        City, Banashankari, Malleshwaram, Rajajinagar, Marathahalli, Yelahanka, BTM Layout,
+                        Basavanagudi, और 25+ अन्य areas में available हैं।</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">Puja के लिए samagri (materials) वो लाएंगे या
+                        हमें लानी होगी?</button>
+                    <div class="faq-answer">Acharya Mahesh Ji पूजा की एक detailed samagri list पहले provide करते हैं।
+                        Basic samagri आपको gather करनी होती है, लेकिन special items जैसे mango leaves, sacred threads वो
+                        अपने साथ ला सकते हैं। WhatsApp पर discuss करें।</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">Satyanarayan Katha में कितना time लगता
+                        है?</button>
+                    <div class="faq-answer">Satyanarayan Katha approximately 2.5-3 घंटे की होती है। इसमें Ganesh पूजन,
+                        कथा वाचन (5 chapters), और आरती शामिल है। Mahesh Ji हर chapter का Hindi में explanation भी देते
+                        हैं।</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">क्या Kundli Milap और Jyotish service भी
+                        available है?</button>
+                    <div class="faq-answer">हाँ! Acharya Mahesh Ji Kundli Milan (horoscope matching for marriage),
+                        Panchang Paramarsh (auspicious date/time selection), और Vastu consultation services भी provide
+                        करते हैं। Online consultation भी available है।</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">महेश पंडित जी की qualification क्या
+                        है?</button>
+                    <div class="faq-answer">Acharya Mahesh Pandey की qualifications: (1) Shastri Acharya — Sampurnanand
+                        Sanskrit University, Varanasi, (2) Karma Kand Diploma — MMVVV Karonda, Katni MP, (3) Vrindavan
+                        Tulsi Gurukul Vidyapith से शिक्षा, (4) Ayodhya में जन्म। 17+ वर्षों का professional अनुभव।</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">WhatsApp में बात करने पर कितनी जल्दी response
+                        मिलती है?</button>
+                    <div class="faq-answer">आमतौर पर 30 minutes के अंदर response मिलती है। Timings: Monday-Sunday, सुबह
+                        6 बजे से रात 9 बजे तक। Urgent मामलों में directly call करें: +91 7676457013 या +91 7464923758।
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <div class="gallery-item">
+        <img src="images/gallery/griha pravesh pooja.jpeg" alt="गृह प्रवेश पूजा" loading="lazy"
+            onclick="openLightbox(this)">
+        <div class="gallery-label" data-hi="गृह प्रवेश पूजा" data-en="Grih Pravesh">गृह प्रवेश पूजा</div>
+    </div>
+    <div class="gallery-item">
+        <img src="images/gallery/rudraabhishek.jpeg" alt="रुद्राभिषेक" loading="lazy" onclick="openLightbox(this)">
+        <div class="gallery-label" data-hi="रुद्राभिषेक" data-en="Rudraabhishek">रुद्राभिषेक</div>
+    </div>
+    <div class="gallery-item">
+        <img src="images/gallery/vastu santi pooja.jpeg" alt="वास्तु शांति पूजा" loading="lazy"
+            onclick="openLightbox(this)">
+        <div class="gallery-label" data-hi="वास्तु शांति पूजा" data-en="Vastu Shanti">वास्तु शांति पूजा
+        </div>
+    </div>
+    <div class="gallery-item">
+        <img src="images/gallery/dev namaskar.jpeg" alt="देव नमस्कार" loading="lazy" onclick="openLightbox(this)">
+        <div class="gallery-label" data-hi="देव नमस्कार" data-en="Dev Namaskar">देव नमस्कार</div>
+    </div>
+    <div class="gallery-item">
+        <img src="images/gallery/anushthan.jpeg" alt="अनुष्ठान" loading="lazy" onclick="openLightbox(this)">
+        <div class="gallery-label" data-hi="अनुष्ठान" data-en="Anushthan">अनुष्ठान</div>
+    </div>
+    <div class="gallery-item">
+        <img src="images/gallery/shivarchan.jpeg" alt="शिवार्चन" loading="lazy" onclick="openLightbox(this)">
+        <div class="gallery-label" data-hi="शिवार्चन" data-en="Shivarchan">शिवार्चन</div>
+    </div>
+    <div class="gallery-item">
+        <img src="images/gallery/dwadashlingtobhadra mandal.jpeg" alt="द्वादश लिंग भद्रा मंडल" loading="lazy"
+            onclick="openLightbox(this)">
+        <div class="gallery-label" data-hi="द्वादश लिंग भद्रा मंडल" data-en="Dwadash Ling Bhadra Mandal">
+            द्वादश लिंग भद्रा मंडल</div>
+    </div>
+    <div class="gallery-item">
+        <img src="images/gallery/deep prajawal .jpeg" alt="दीप प्रज्वलन" loading="lazy" onclick="openLightbox(this)">
+        <div class="gallery-label" data-hi="दीप प्रज्वलन" data-en="Deep Prajawal">दीप प्रज्वलन</div>
+    </div>
+    </div>
+    </div>
     </section>
 
     <!-- Contact Section -->
@@ -1578,18 +2030,62 @@
                 </div>
 
                 <div class="contact-cta">
-                    <h3 data-hi="अभी संपर्क करें" data-en="Contact Now">Contact Now</h3>
-                    <p data-hi="आपके धार्मिक कार्यों को सुचारू रूप से संपन्न करवाने के लिए"
-                        data-en="For smooth completion of your religious works">For smooth completion of your religious
-                        works</p>
-                    <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                    <h3 data-hi="बुकिंग फॉर्म" data-en="Booking Form">बुकिंग फॉर्म</h3>
+                    <p data-hi="फॉर्म भरें — सीधे WhatsApp पर message जाएगा"
+                        data-en="Fill the form — message goes directly to WhatsApp">
+                        फॉर्म भरें — सीधे WhatsApp पर message जाएगा</p>
+                    <form id="booking-form" class="booking-form" onsubmit="submitBooking(event)">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="bk-name">👤 नाम / Name</label>
+                                <input type="text" id="bk-name" placeholder="आपका नाम" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="bk-phone">📞 फ़ोन / Phone</label>
+                                <input type="tel" id="bk-phone" placeholder="+91 XXXXXXXXXX" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="bk-event">🕉️ पूजा / Event</label>
+                                <select id="bk-event" required>
+                                    <option value="">-- चुनें --</option>
+                                    <option value="Griha Pravesh Pooja">गृह प्रवेश पूजा</option>
+                                    <option value="Satyanarayan Katha">सत्यनारायण कथा</option>
+                                    <option value="Vivah / Marriage">विवाह संस्कार</option>
+                                    <option value="Mundan Sanskar">मुंडन संस्कार</option>
+                                    <option value="Namkaran Pooja">नामकरण पूजा</option>
+                                    <option value="Rudraabhishek">रुद्राभिषेक</option>
+                                    <option value="Vastu Shanti">वास्तु शांति</option>
+                                    <option value="Shiv Pooja">शिव पूजा</option>
+                                    <option value="Sunderkand Path">सुन्दरकाण्ड पाठ</option>
+                                    <option value="Akhand Ramayan Path">अखण्ड रामायण पाठ</option>
+                                    <option value="Navgraha Shanti">नवग्रह शांति</option>
+                                    <option value="Kaal Sarp Dosh">काल सर्प दोष निवारण</option>
+                                    <option value="Other">अन्य / Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="bk-date">📅 तारीख / Date</label>
+                                <input type="date" id="bk-date" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="bk-area">📍 क्षेत्र / Area (Bangalore)</label>
+                            <input type="text" id="bk-area" placeholder="e.g. Rajaji Nagar, Jayanagar">
+                        </div>
+                        <button type="submit" class="cta-btn whatsapp-large form-submit-btn">
+                            <span>📱</span> WhatsApp पर बुक करें
+                        </button>
+                    </form>
+                    <div style="margin-top:20px; display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
                         <a href="https://wa.me/917676457013" target="_blank" rel="noopener noreferrer"
-                            class="cta-btn whatsapp-large">
-                            <span>📱</span> WhatsApp 7676457013
+                            class="cta-btn whatsapp-large" style="font-size:0.95rem;padding:12px 24px;">
+                            <span>📱</span> Direct WhatsApp 7676457013
                         </a>
                         <a href="https://wa.me/917464923758" target="_blank" rel="noopener noreferrer"
-                            class="cta-btn whatsapp-large">
-                            <span>📱</span> WhatsApp 7464923758
+                            class="cta-btn whatsapp-large" style="font-size:0.95rem;padding:12px 24px;">
+                            <span>📱</span> Direct WhatsApp 7464923758
                         </a>
                     </div>
                 </div>
