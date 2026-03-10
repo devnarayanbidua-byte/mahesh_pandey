@@ -6,6 +6,9 @@ const lightboxImage = document.getElementById('lightbox-image');
 const lightboxCaption = document.getElementById('lightbox-caption');
 const lightboxClose = document.querySelector('.lightbox-close');
 
+// Language state — declared early to prevent hoisting issues
+let currentLanguage = 'en';
+
 // Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
     initializeNavigation();
@@ -248,7 +251,7 @@ window.addEventListener('scroll', throttledScrollHandler);
 // Preload critical images
 function preloadImages() {
     const criticalImages = [
-        'images/gallery/pandit-ji.jpeg',
+        'images/gallery/pandit-ji.png',
         'images/gallery/aacharya certificate.jpeg'
     ];
 
@@ -517,7 +520,7 @@ const translations = {
     }
 };
 
-let currentLanguage = 'en';
+// (currentLanguage already declared at top of file)
 
 // Content Translation Mapping for detailed service descriptions
 const contentTranslations = {

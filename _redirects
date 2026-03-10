@@ -1,0 +1,2 @@
+# Redirect www to non-www (Cloudflare Pages)
+https://www.maheshpanditji.in/* https://maheshpanditji.in/:splat 301

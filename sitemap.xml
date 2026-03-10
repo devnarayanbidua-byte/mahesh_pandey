@@ -5,21 +5,21 @@
   
   <!-- Main Home Page -->
   <url>
-    <loc>https://github.com/devnarayanbidua-byte/mahesh_pandey</loc>
-    <lastmod>2026-03-05T00:00:00Z</lastmod>
+    <loc>https://maheshpanditji.in/</loc>
+    <lastmod>2026-03-10T00:00:00Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>images/gallery/pandit-ji.png</image:loc>
-      <image:title>Acharya Mahesh Pandit Ji - Vedic Pandit Expert</image:title>
+      <image:loc>https://maheshpanditji.in/images/gallery/pandit-ji.png</image:loc>
+      <image:title>Acharya Mahesh Pandit Ji - Vedic Pandit Expert Bangalore</image:title>
     </image:image>
     <mobile:mobile/>
   </url>
 
   <!-- About Section -->
   <url>
-    <loc>https://github.com/devnarayanbidua-byte/mahesh_pandey#about</loc>
-    <lastmod>2026-03-05T00:00:00Z</lastmod>
+    <loc>https://maheshpanditji.in/#about</loc>
+    <lastmod>2026-03-10T00:00:00Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <mobile:mobile/>
@@ -27,8 +27,8 @@
 
   <!-- Services Section -->
   <url>
-    <loc>https://github.com/devnarayanbidua-byte/mahesh_pandey#services</loc>
-    <lastmod>2026-03-05T00:00:00Z</lastmod>
+    <loc>https://maheshpanditji.in/#services</loc>
+    <lastmod>2026-03-10T00:00:00Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <mobile:mobile/>
@@ -36,121 +36,90 @@
 
   <!-- Gallery Section -->
   <url>
-    <loc>https://github.com/devnarayanbidua-byte/mahesh_pandey#gallery</loc>
-    <lastmod>2026-03-05T00:00:00Z</lastmod>
+    <loc>https://maheshpanditji.in/#gallery</loc>
+    <lastmod>2026-03-10T00:00:00Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>images/gallery/pooja1.jpg</image:loc>
-      <image:title>Vedic Pooja Ceremony</image:title>
+      <image:loc>https://maheshpanditji.in/images/gallery/griha pravesh pooja.jpeg</image:loc>
+      <image:title>Grih Pravesh Pooja Ceremony - Acharya Mahesh Pandit Ji</image:title>
     </image:image>
     <image:image>
-      <image:loc>images/gallery/marriage1.jpg</image:loc>
-      <image:title>Marriage Ceremony</image:title>
+      <image:loc>https://maheshpanditji.in/images/gallery/rudraabhishek.jpeg</image:loc>
+      <image:title>Rudraabhishek Ceremony - Acharya Mahesh Pandit Ji</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://maheshpanditji.in/images/gallery/vastu santi pooja.jpeg</image:loc>
+      <image:title>Vastu Shanti Pooja - Acharya Mahesh Pandit Ji</image:title>
     </image:image>
     <mobile:mobile/>
   </url>
 
   <!-- Contact Section -->
   <url>
-    <loc>https://github.com/devnarayanbidua-byte/mahesh_pandey#contact</loc>
-    <lastmod>2026-03-05T00:00:00Z</lastmod>
+    <loc>https://maheshpanditji.in/#contact</loc>
+    <lastmod>2026-03-10T00:00:00Z</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.9</priority>
     <mobile:mobile/>
   </url>
 
-  <!-- Service Pages (Area Specific) -->
+  <!-- Service - Marriage -->
   <url>
-    <loc>https://github.com/devnarayanbidua-byte/mahesh_pandey?area=whitefield</loc>
-    <lastmod>2026-03-05T00:00:00Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <mobile:mobile/>
-  </url>
-
-  <url>
-    <loc>https://github.com/devnarayanbidua-byte/mahesh_pandey?area=koramangala</loc>
-    <lastmod>2026-03-05T00:00:00Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <mobile:mobile/>
-  </url>
-
-  <url>
-    <loc>https://github.com/devnarayanbidua-byte/mahesh_pandey?area=jayanagar</loc>
-    <lastmod>2026-03-05T00:00:00Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <mobile:mobile/>
-  </url>
-
-  <url>
-    <loc>https://github.com/devnarayanbidua-byte/mahesh_pandey?area=indiranagar</loc>
-    <lastmod>2026-03-05T00:00:00Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <mobile:mobile/>
-  </url>
-
-  <url>
-    <loc>https://github.com/devnarayanbidua-byte/mahesh_pandey?area=electronic-city</loc>
-    <lastmod>2026-03-05T00:00:00Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <mobile:mobile/>
-  </url>
-
-  <!-- Person/Profile Schema -->
-  <url>
-    <loc>https://github.com/devnarayanbidua-byte/mahesh_pandey?profile=mahesh-pandey</loc>
-    <lastmod>2026-03-05T00:00:00Z</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.95</priority>
-    <mobile:mobile/>
-  </url>
-
-  <url>
-    <loc>https://github.com/devnarayanbidua-byte/mahesh_pandey?profile=acharya-mahesh-pandit</loc>
-    <lastmod>2026-03-05T00:00:00Z</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.95</priority>
-    <mobile:mobile/>
-  </url>
-    <loc>https://github.com/devnarayanbidua-byte/mahesh_pandey?service=marriage</loc>
-    <lastmod>2026-03-05T00:00:00Z</lastmod>
+    <loc>https://maheshpanditji.in/#services</loc>
+    <lastmod>2026-03-10T00:00:00Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://maheshpanditji.in/images/services/vivah sanskar.png</image:loc>
+      <image:title>Vivah Sanskar - Hindu Marriage Ceremony Bangalore</image:title>
+    </image:image>
     <mobile:mobile/>
   </url>
 
+  <!-- Service - Grih Pravesh -->
   <url>
-    <loc>https://github.com/devnarayanbidua-byte/mahesh_pandey?service=grih-pravesh</loc>
-    <lastmod>2026-03-05T00:00:00Z</lastmod>
+    <loc>https://maheshpanditji.in/#services</loc>
+    <lastmod>2026-03-10T00:00:00Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://maheshpanditji.in/images/services/griha pravesh pooja.png</image:loc>
+      <image:title>Grih Pravesh Pooja - House Warming Ceremony Bangalore</image:title>
+    </image:image>
     <mobile:mobile/>
   </url>
 
+  <!-- Service - Ganesh Pooja -->
   <url>
-    <loc>https://github.com/devnarayanbidua-byte/mahesh_pandey?service=pooja</loc>
-    <lastmod>2026-03-05T00:00:00Z</lastmod>
+    <loc>https://maheshpanditji.in/#services</loc>
+    <lastmod>2026-03-10T00:00:00Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://maheshpanditji.in/images/services/ganesh poojan.png</image:loc>
+      <image:title>Ganesh Poojan - Vedic Pooja Services Bangalore</image:title>
+    </image:image>
     <mobile:mobile/>
   </url>
 
+  <!-- Service - Vastu Shanti -->
   <url>
-    <loc>https://github.com/devnarayanbidua-byte/mahesh_pandey?service=vastu-shanti</loc>
-    <lastmod>2026-03-05T00:00:00Z</lastmod>
+    <loc>https://maheshpanditji.in/#services</loc>
+    <lastmod>2026-03-10T00:00:00Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://maheshpanditji.in/images/services/vastu shanti poojan.png</image:loc>
+      <image:title>Vastu Shanti Pooja - Vastu Consultant Bangalore</image:title>
+    </image:image>
     <mobile:mobile/>
   </url>
 
+  <!-- Service - Satyanarayan Katha -->
   <url>
-    <loc>https://github.com/devnarayanbidua-byte/mahesh_pandey?service=katha-vachan</loc>
-    <lastmod>2026-03-05T00:00:00Z</lastmod>
+    <loc>https://maheshpanditji.in/#services</loc>
+    <lastmod>2026-03-10T00:00:00Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <mobile:mobile/>

@@ -1,37 +1,21 @@
-# robots.txt - SEO Optimization for Mahesh Pandey (Acharya Mahesh Pandit) Website
+# robots.txt - Acharya Mahesh Pandit Ji (maheshpanditji.in)
 
 User-agent: *
 Allow: /
 Allow: /css/
 Allow: /js/
 Allow: /images/
-Allow: /?profile=mahesh-pandey
-Allow: /?profile=acharya-mahesh-pandit
 
 Disallow: /admin/
 Disallow: /private/
-Disallow: /*.pdf$
 
-# Specific rules for major search engines
-User-agent: Googlebot
-Allow: /
-Crawl-delay: 0
-
-User-agent: Bingbot
-Allow: /
-Crawl-delay: 1
-
-# Sitemap location
-Sitemap: https://github.com/devnarayanbidua-byte/mahesh_pandey/sitemap.xml
-Sitemap: https://github.com/devnarayanbidua-byte/mahesh_pandey/sitemap-news.xml
-
-# Prevent indexing of duplicate content
-User-agent: *
+# Prevent indexing of query-based duplicate content
 Disallow: /*?*sort=
 Disallow: /*?*filter=
 
-# Allow crawling of CSS and JS for rendering
+# Specific rules for Google
 User-agent: Googlebot
+Allow: /
 Allow: *.css$
 Allow: *.js$
 Allow: *.gif$
@@ -39,3 +23,12 @@ Allow: *.jpg$
 Allow: *.jpeg$
 Allow: *.png$
 Allow: *.webp$
+Crawl-delay: 0
+
+# Specific rules for Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://maheshpanditji.in/sitemap.xml
